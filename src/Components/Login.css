@@ -31,7 +31,9 @@ button{
     color: white;
     background-color: red;
     border-style: none;
-    border-radius: 10px
+    border-radius: 10px;
+    z-index: 5;
+    position: relative;
 }
 .city{
     border: 1px black solid;
@@ -55,14 +57,16 @@ button{
     height: 20vh;
     width: 100vw;
     align-items: center;
+    
     /* flex-direction: row; */
     /* display: flex; */
     /* justify-content: flex-start; */
 }
 h1{
-    color:  #812122
+    color:  #812122;
+    cursor: none;
 }
-.snow{
+/* .snow{
     background-image:
             url('../images/snow.png');
     width: 100% !important;
@@ -77,4 +81,4 @@ h1{
  @keyframes snow {
      from {background-position: 0px 0px, 0px 0px, 0px 0px;}
      to {background-position: 500px 1000px, 200px 400px, -100px 300px;}
- }
+ } */
