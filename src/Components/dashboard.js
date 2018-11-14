@@ -40,7 +40,13 @@ class Dashboard extends Component {
                     {/* <div class="parallax"></div> */}
 
                     <div className="leftlowerbox">
-
+                        <div className="stripecircle">
+                        <div className="fontwhitebox"></div>
+                        </div>
+                        <div className="blankwhitebox"></div>
+                    </div>
+                    <div className="candycane">
+                    
                     </div>
                     <div className="middlelowerbox">
                         <div className="lowermiddleleft">
@@ -76,6 +82,8 @@ class Dashboard extends Component {
 
                         </div>
                     </div>
+                    <div className="candycane"></div>
+
                     <div className="rightlowerbox">
                         <div className="uperlowerrightbox">
                             <br />
@@ -98,8 +106,12 @@ class Dashboard extends Component {
                                 <option name="" id="">Age</option>
                             </select>
                         </div>
-                        <div>
-
+                        <div className="push50"></div>
+                        <div className="lowerlowerrightbox">
+                        <div className="stripecircle1">
+                        <div className="fontwhitebox1"></div>
+                        </div>
+                        <div className="blankwhitebox1"></div>
                         </div>
                     </div>
 
