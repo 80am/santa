@@ -1,0 +1,100 @@
+mainapp{
+    display: flex;
+    flex-direction: column;
+}
+.body1{
+    background-image: url(../images/socks.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    /* background-color: #EFE5D5; */
+    height: 80vh;
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.body2{
+    background-color: white;
+    height: 20vh;
+    width: 100vw;
+}
+.boxlid{
+    border: 3px green solid;
+    width: 53vw;
+    height: 10vh;
+    background-color: #EFE5D5;
+    box-shadow: 5px 5px 18px black;
+
+
+}
+.inputbigbox{
+    border: 3px green solid;
+    display: flex;
+    height: 50vh;
+    width: 50vw;
+    border-top: none;
+    background-color: #EFE5D5;
+
+    
+}
+.inputboxleft{
+    border-right: 2px green solid;
+    height: 100%;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-top: none;
+}
+/* .inputboxcenter{
+    border: 1px black solid;
+    height: 100%;
+    width: 33%;
+} */
+.inputboxright{
+    /* border: 1px blue solid; */
+    height: 100%;
+    width: 77%;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.inputboxright input{
+    text-align: center;
+    height: 10%;
+    width: 60%;
+    border-style: none;
+    background: transparent;
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 20px;
+
+}
+.boxleftup{
+    /* border: 1px black solid; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.kidpic{
+    border: 1px red solid;
+    height: 65%;
+    width: 60%;
+}
+.boxleftdown{
+    /* border: 1px purple solid; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

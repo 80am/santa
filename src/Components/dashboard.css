@@ -86,19 +86,6 @@ lowerbody{
     width: 100vw;
     height: 90vh;
 }
-.parallax {
-    /* The image used */
-    background-image: url("../images/cookies.jpg");
-
-    /* Set a specific height */
-    height: 100%; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .middlelowerbox{
 /* border: 2px yellow solid; */
@@ -106,10 +93,7 @@ lowerbody{
  width: 60vw;
  display: flex;
  height: 100vh;
- /* position: fixed; */
- /* flex-direction: column; */
- /* justify-content: flex-start; */
- 
+
 }
 
 .kidbox{
@@ -132,23 +116,24 @@ lowerbody{
     display: flex;
     background-color: white;
     display: flex;
+    /* flex-direction: column; */
+}
+.kidboxlefthalf{
+    border: 1px black solid;
+    height: 100%;
+    width: 70%;
+    display: flex;
     flex-direction: column;
 }
-.kidboxuperhalf{
-    /* border: 1px black solid; */
-    height: 65%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
 .kidboxpicture{
-/* border: 1px black solid; */
- height: 100%;
- width: 70%;
+border: 1px black solid;
+ height: 60%;
+ width: 100%;
 
 }
-.kidboxuperinfo{
-    border-left: 2px goldenrod solid;
+.kidboxrightinfo{
+    border: 2px goldenrod solid;
+    /* border-left: 2px goldenrod solid; */
     height: 100%;
     width: 30%;
     display: flex;
@@ -162,16 +147,29 @@ lowerbody{
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
+    
+}
+.giftready img{
+    margin: 5px
 }
 .check{
     height: 50%;
     width: 100%;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.check img{
+    margin: 5px;
 }
 .kidboxlowerhalf{
-    border-top: 2px goldenrod solid;
-    height: 35%;
-    widows: 100%;
+    border: 2px goldenrod solid;
+    /* border-top: 2px goldenrod solid; */
+    height: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

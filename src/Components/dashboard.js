@@ -53,24 +53,27 @@ class Dashboard extends Component {
                             <text1>Nice</text1>
                             <div className="kidbox">
                                 <div className="kidboxborder">
-                                    <div className="kidboxuperhalf">
-                                        <div className="kidboxpicture">
+                                    <div className="kidboxlefthalf">
+                                            <div className="kidboxpicture">
                                             pic
-                                    </div>
-                                        <div className="kidboxuperinfo">
-                                            <div className="giftready">
-                                                Gift Ready?
+                                            </div>
+                                        <div className="kidboxlowerhalf">
+                                            <a className="kidname">Name</a>
+                                            <a>What they want</a>
+
                                         </div>
+                                    </div>
+                                        <div className="kidboxrightinfo">
+                                            <div className="giftready">
+                                                Gift Ready? 
+                                                
+                                                <img src={Gcheck} alt="" height="50%" width="50%" />
+                                            </div>
                                             <div className="check">
-                                                <img src={Gcheck} alt="" height="100%" width="100%" />
+                                                Does Bernard Know?
+                                                <img src={Gcheck} alt="" height="50%" width="50%" />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="kidboxlowerhalf">
-                                        <a className="kidname">Name</a>
-                                        <a>What they want</a>
-
-                                    </div>
 
                                 </div>
                             </div>
@@ -122,5 +125,6 @@ class Dashboard extends Component {
         )
     }
 }
+
 
 export default Dashboard
