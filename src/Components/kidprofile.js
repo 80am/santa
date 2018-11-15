@@ -3,11 +3,13 @@ import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import axios from "axios"
 import './kidprofile.css'
+import { connect } from 'react-redux'
 
 
 class Kidprofile extends Component{
     constructor(props){
         super(props)
+
             this.state={
                 firstname:"",
                 lastname:"",
@@ -114,7 +116,24 @@ class Kidprofile extends Component{
                             <input type="text" onChange={this.handleWish} value={this.props.wish} placeholder="Your mostest wanted thing"/>
                             <input type="text" onChange={this.handleAge} value={this.props.age} placeholder="Age"/>
                             <input type="text" onChange={this.handleDeeds} value={this.props.deeds} placeholder="How many nice things have you done this year?"/>
-                            <input type="text" onChange={this.handleDeer} value={this.props.deer} placeholder="Favorite Reindeer"/>
+                              <div>
+                                  <span>
+                                Your Favorite Deer?
+                                </span>
+                            <select onChange={this.handledeer}> 
+                                <option name="" value=""></option>
+                                <option name="" value="dasher">Dasher</option>
+                                <option name="" value="prancer">Prancer</option>
+                                <option name="" value="vixen">Vixen</option>
+                                <option name="" value="comet">Comet</option>
+                                <option name="" value="cupid">Cupid</option>
+                                <option name="" value="donner">Donner</option>
+                                <option name="" value="blitzen">Blitzen</option>
+                                <option name="" value="rudolph">Rudolph</option>
+                            </select>
+                            </div>
+                            
+                            {/* <input type="text" onChange={this.handleDeer} value={this.props.deer} placeholder="Favorite Reindeer"/> */}
                         </div>
                     </div>
                 </body1>
@@ -128,22 +147,22 @@ class Kidprofile extends Component{
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        newkid: state.kid,
-        firstname: state.kid.firstname,
-        lastname: state.kid.lastname,
-        gender: state.kid.address,
-        haircolor: state.kid.state,
-        eyecolor: state.kid.zip,
-        hobby: state.kid.country,
-        birthday: state.kid.age,
-        birthmonth: state.kid.deeds,
-        birthyear: state.kid.deer,
-        kidpic: state.kid.kidpic,
-        toypic: state.kid.toypic
-    }
-}
+// function mapStateToProps(state) {
+//     return {
+//         newkid: state.kid,
+//         firstname: state.kid.firstname,
+//         lastname: state.kid.lastname,
+//         address: state.kid.address,
+//         state: state.kid.state,
+//         zip: state.kid.zip,
+//         country: state.kid.country,
+//         age: state.kid.age,
+//         deeds: state.kid.deeds,
+//         deer: state.kid.deer,
+//         kidpic: state.kid.kidpic,
+//         toypic: state.kid.toypic
+//     }
+// }
 
 const mapDispatchToProps = dispatch => ({
     // values going out to state
@@ -161,4 +180,4 @@ const mapDispatchToProps = dispatch => ({
     addtoyPic: value => dispatch({ type: "ADD_TOYPIC", value: value }),
 
 })
-export default Kidprofile
+export default connect( mapDispatchToProps)(Kidprofile)

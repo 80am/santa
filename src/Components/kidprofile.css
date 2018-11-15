@@ -27,6 +27,11 @@ mainapp{
     height: 10vh;
     background-color: #EFE5D5;
     box-shadow: 5px 5px 18px black;
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
 
 
 }
@@ -49,6 +54,11 @@ mainapp{
     align-items: center;
     justify-content: space-around;
     border-top: none;
+    /* background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box; */
 }
 /* .inputboxcenter{
     border: 1px black solid;
@@ -97,4 +107,19 @@ mainapp{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.inputboxright select{
+    height: 7%;
+    width: 30%;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.2);
+    background-color: transparent;
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 20px;
+    border-style: none;
+}
+.inputboxright span{
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 20px;
+    text-color: 
 }
