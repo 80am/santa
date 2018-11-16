@@ -132,7 +132,7 @@ mainapp{
 }
 .middlebody{
     display: flex;
-    border: 1px purple solid;
+    /* border: 1px purple solid; */
     height: 10vh;
     background-color: #800000;
     align-items: center;
@@ -145,10 +145,7 @@ mainapp{
     width: 70%;
     border-radius: 50px;;
     background-image: url('../images/deers.jpg');
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-attachment: scroll;
-    box-sizing: border-box;    */
+   margin: 0%
     
 }
 .body11{
@@ -183,6 +180,7 @@ mainapp{
 .topleft{
     border-right: 1px black solid;
     width: 10%;
+    
 }
 .topmiddle{
     border-top: 1px black solid;
@@ -266,22 +264,30 @@ mainapp{
 }
 .arrow-left {
   width: 0; 
-  height: 0; 
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
-  border-radius: 60px;
-  border-left: 60px solid green;
+  height: 0vh; 
+  border-top: 70px solid transparent;
+  border-bottom: 70px solid transparent;
+  border-radius: 70px;
+  border-left: 70px solid green;
+  z-index: 1;
+  padding-left: 10px;
+  margin: 0 0 5px 25px
+  
+
   /* padding-right: 100px */
 }
 .arrow-left1 {
     width: 0; 
     position: fixed;
     height: 0; 
-    border-top: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-radius: 60px;
-    border-left: 60px solid #21201E;
-    padding-left: 100px;
+    border-top: 65px solid transparent;
+    border-bottom: 65px solid transparent;
+    border-radius: 65px;
+    border-left: 65px solid #21201E;
+    /* padding-top: 12px; */
+    position: fixed;
+    margin: 5px 0 0 19px ;
+    z-index: 2
   
 }
 .endofwrapper{

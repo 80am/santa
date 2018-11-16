@@ -13,12 +13,103 @@ class Dashboard extends Component {
         super(props)
 
         this.state = {
-
+            kids:[]
         }
+    }
+    componentDidMount(){
+        axios.get('/api/getallkids').then((res)=>{this.setState({kids: res.data})
+        })
     }
 
 
     render() {
+        let nicekids = this.state.kids.map(nicekid => {
+                if (nicekid.n_or_n == 'nice') {
+
+                    return (
+                            <React.Fragment key={nicekid.kid_id} >
+
+                                <div className="kidbox">
+                                <div className="kidboxborder">
+                                    <div className="kidboxlefthalf">
+                                            <div className="kidboxpicture1">
+                                            <img src={`${nicekid.kidpic}`} alt="" height="100%" width="75%"/>
+                                            
+                                            </div>
+                                        <div className="kidboxlowerhalf">
+                                            <a className="kidname">
+                                                {(`${nicekid.firstname}`.toUpperCase())}
+                                                <br/>
+                                                {(`${nicekid.lastname}`.toUpperCase())}
+                                            </a>
+                                            <a>{(`${nicekid.toy_name}`.toUpperCase())}</a>
+
+                                        </div>
+                                    </div>
+                                        <div className="kidboxrightinfo">
+                                            <div className="giftready">
+                                                
+                                                <img src={`${nicekid.toy_picture}`} alt="" height="100%" width="100%" />
+                                            </div>
+                                            <div className="check">
+                                                Does Bernard Know?
+                                                <img src={Gcheck} alt="" height="25%" width="50%" />
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                               
+                            </React.Fragment> 
+                    )
+                
+                } 
+            }
+        )    
+        let naughtykids = this.state.kids.map(naughtyKid => {
+                if(naughtyKid.n_or_n == 'naughty'){
+                    
+                    return(
+                        <React.Fragment key={naughtyKid.kid_id}>
+
+                            
+                            <div className="kidbox">
+                                <div className="kidboxborder">
+                                    <div className="kidboxlefthalf">
+                                            <div className="kidboxpicture">
+                                            <img src={`${naughtyKid.kidpic}`} alt="" height="100%" width="75%"/>
+                                            
+                                            </div>
+                                        <div className="kidboxlowerhalf">
+                                            <a className="kidname">
+                                                {(`${naughtyKid.firstname}`.toUpperCase())}
+                                                <br/>
+                                                {(`${naughtyKid.lastname}`.toUpperCase())}
+                                            </a>
+                                            <a>{(`${naughtyKid.wish}`.toUpperCase())}</a>
+
+                                        </div>
+                                    </div>
+                                        <div className="kidboxrightinfo">
+                                            <div className="giftready">
+                                                
+                                                <img src={`${naughtyKid.toy_picture}`} alt="" height="100%" width="100%" />
+                                            </div>
+                                            <div className="check">
+                                                Does Bernard Know?
+                                                <img src={Gcheck} alt="" height="25%" width="50%" />
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+            
+
+                        </React.Fragment>
+                    )
+                }      
+                
+            } 
+        )
+
         return (
             <mainbody>
                 <div className="drop10"></div>
@@ -35,7 +126,7 @@ class Dashboard extends Component {
 
                     </headerright>
                 </header>
-                <div className="drop10"></div>
+                {/* <div className="drop10"></div> */}
                 <lowerbody>
                     {/* <div class="parallax"></div> */}
 
@@ -57,35 +148,16 @@ class Dashboard extends Component {
                     <div className="middlelowerbox">
                         <div className="lowermiddleleft">
                             <text1>Nice</text1>
-                            <div className="kidbox">
-                                <div className="kidboxborder">
-                                    <div className="kidboxlefthalf">
-                                            <div className="kidboxpicture">
-                                            pic
-                                            </div>
-                                        <div className="kidboxlowerhalf">
-                                            <a className="kidname">Name</a>
-                                            <a>What they want</a>
 
-                                        </div>
-                                    </div>
-                                        <div className="kidboxrightinfo">
-                                            <div className="giftready">
-                                                Gift Ready? 
-                                                
-                                                <img src={Gcheck} alt="" height="50%" width="50%" />
-                                            </div>
-                                            <div className="check">
-                                                Does Bernard Know?
-                                                <img src={Gcheck} alt="" height="50%" width="50%" />
-                                            </div>
-                                        </div>
+                            {nicekids}
 
-                                </div>
-                            </div>
+                            
                         </div>
                         <div className="lowermiddleright">
-                            <text1>Naughty</text1>
+                            <text1 className="text1">Naughty</text1>
+
+                            {naughtykids}
+
                         </div>
                         <div className="lowerupperbox">
 

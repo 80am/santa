@@ -141,8 +141,8 @@ class Kidprofile extends Component {
                 </body1>
                 <div className="middlebody">
                 <div className="endofwrapper">
-                    <div class="arrow-left1"></div>
                     <div class="arrow-left"></div>
+                    <div class="arrow-left1"></div>
                 </div>
                     <div className="middlebody1"></div>
                 <div className="endofwrapper">
