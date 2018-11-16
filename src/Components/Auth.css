@@ -1,0 +1,17 @@
+/* .behindmodal{
+    background-color: black;
+    opacity: .1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.modal{
+    border: 1px blue solid;
+    height: 30vh;
+    width: 20vw;
+    background-color: white;
+    z-index: 2;
+    position: fixed;
+} */

@@ -74,7 +74,7 @@ headercenter{
     background-image: linear-gradient(78deg,#C7342A,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2,#C7342A,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2);
     /* box-shadow: 5px 10px 18px gray; */
     /* box-shadow: 18px 10px 15px black; */
-    position: unset;
+    position: relative;
     z-index: 1;
 /*-----------------------------------------------------------------------*/
 }
@@ -188,19 +188,37 @@ border: 1px black solid;
     align-items: flex-start;
     font-family: kaushan script, sans-serif;
     /* position: fixed; */
+    /* background-color: black */
+    
 
 }
 .leftlowerbox{
-    /* border: 2px solid teal; */
+    /* border: 2px solid purple; */
     height: 100vh;
-    width: 20vw;
+    width: 20vw; 
     display: flex;
-    align-items: flex-end;
     flex-direction: column;
-    margin: 0px -32px 0 0;
-    /* z-index: 1; */
+    align-items: flex-start;
+    font-family: kaushan script, sans-serif;
+    /* position: fixed; */
+    /* background-color: black */
+}
+.loweruperleft{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 
 }
+.lowerlowerleft{
+    height: 50%;
+    width: 100%;
+}
+/* .leftlowerbox .blankwhitebox{
+    border: black 1px solid
+    display: flex;
+    justify-content: flex-start
+} */
 .stripecircle{
     border: 2px solid black;
     /* border-right: none; */
@@ -209,32 +227,42 @@ border: 1px black solid;
     width: 13vw;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    background-image: linear-gradient(68deg,#C7342A,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2,#C7342A,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2);
-    margin: 0 0 10px 0;
+    background-image: linear-gradient(73deg,#C7342A,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2,#C7342A,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2);
+    margin: 0 -110px 0 0;
     z-index: 9;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 .blankwhitebox{
-    /* border: 1px solid black; */
-    height: 15vh;
+     /* border: 1px solid black; */
+  height: 26vh;
+  width: 7vw;
+  /* background: black; */
+  background-color: #efe5d5;
+  position: relative;
+  z-index: 2;
+  margin: 0 -27px 0 0;
+    /* border: 6px solid #EFE5D5; */
+    /* height: 15vh;
     width: 5vw;
     background: #EFE5D5;
-    position: fixed;
-    z-index: 2;
-    margin: 0 -20px 0 0;
+    z-index: 6;
+    margin: 0 -3px 0 0;
+    position: fixed; */
 }
 .fontwhitebox{
     border: 2px black solid;
     border-bottom: none;
     height: 26vh;
-    width: 76.5%;
+    width: 76%;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     background-color: white;
     /* background-color: #cfb081; */
+    /* background-color: black; */
 }
 /* .innercircle{
     border-top-left-radius: 40%;
@@ -300,14 +328,13 @@ text1{
     width: 13vw;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-image: linear-gradient(78deg,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2,#C7342A,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2,#C7342A);
-    margin: 0 0 10px 0;
+    background-image: linear-gradient(80deg,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2,#C7342A,#DDDCE2,#DDDCE2,#C7342A, #DDDCE2,#DDDCE2,#C7342A);
     z-index: 9;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    margin: 0 0 0 -8.65%;
+    margin: 0 0 0 -8.85%;
 }
 .fontwhitebox1{
     border: 2px black solid;
@@ -321,8 +348,9 @@ text1{
 .blankwhitebox1{
   /* border: 1px solid black; */
   height: 26vh;
-  width: 5vw;
+  width: 7vw;
   background: #EFE5D5;
+  /* background-color: gray; */
   position: fixed;
   z-index: 5;
   margin: 0 0 0 -34px;

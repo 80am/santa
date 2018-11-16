@@ -3,26 +3,22 @@ mainapp{
     flex-direction: column;
 }
 .body1{
-    background-image: url(../images/socks.jpg);
+    background-color: maroon;
+    /* background-image: url(../images/socks.jpg); */
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
     box-sizing: border-box;
     /* background-color: #EFE5D5; */
-    height: 80vh;
+    height: 70vh;
     width: 100vw;
-    justify-content: center;
+    justify-content: flex-end;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.body2{
-    background-color: white;
-    height: 20vh;
-    width: 100vw;
-}
 .boxlid{
-    border: 3px green solid;
+    border: 10px green solid;
     width: 53vw;
     height: 10vh;
     background-color: #EFE5D5;
@@ -33,15 +29,17 @@ mainapp{
     background-attachment: scroll;
     box-sizing: border-box;
 
-
+    
 }
 .inputbigbox{
-    border: 3px green solid;
+    border: 10px green solid;
     display: flex;
     height: 50vh;
     width: 50vw;
     border-top: none;
     background-color: #EFE5D5;
+    box-shadow: 5px 5px 18px black;
+    margin: 0 0 15px 0
 
     
 }
@@ -83,7 +81,7 @@ mainapp{
     background: transparent;
     font-family: kaushan script, sans-serif, roboto;
     font-size: 20px;
-
+    
 }
 .boxleftup{
     /* border: 1px black solid; */
@@ -110,16 +108,188 @@ mainapp{
 }
 .inputboxright select{
     height: 7%;
-    width: 30%;
+    width: 40%;
     border-radius: 5px;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.2);
     background-color: transparent;
     font-family: kaushan script, sans-serif, roboto;
     font-size: 20px;
     border-style: none;
+    color: red;
+    padding-left: 10%;
+ 
+
 }
 .inputboxright span{
     font-family: kaushan script, sans-serif, roboto;
     font-size: 20px;
-    text-color: 
+    color: #757575
+   
 }
+.inputboxright div{
+    /* border: 5px black solid; */
+    width: 100%
+}
+.middlebody{
+    display: flex;
+    border: 1px purple solid;
+    height: 10vh;
+    background-color: #800000;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+.middlebody1{
+    /* border: 1px blue solid; */
+    height: 100%;
+    width: 70%;
+    border-radius: 50px;;
+    background-image: url('../images/deers.jpg');
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-attachment: scroll;
+    box-sizing: border-box;    */
+    
+}
+.body11{
+    /* border: 2px solid purple; */
+    display: flex;
+    height: 20vh;
+    width: 100vw;
+    justify-content: center;
+    background-color: #800000;
+}
+.body2{
+    border: black 1px solid;
+    height: 20vh;
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/bluepaper.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;    
+    border-top-right-radius: 15px;                 
+    border-top-left-radius: 15px;                 
+}
+
+.top{
+    /* border: 1px black solid; */
+    display: flex;
+    height: 40%;
+    width: 100%
+}
+.topleft{
+    border-right: 1px black solid;
+    width: 10%;
+}
+.topmiddle{
+    border-top: 1px black solid;
+    width: 3%;
+    background-color: goldenrod;
+}
+.topright{
+    border-left: 1px black solid;
+    width: 89%;
+    border-top-right-radius: 10px 
+}
+.middle{
+    /* border: 1px yellow solid; */
+    display: flex;
+    height: 20%;
+}
+/* .middleleft{
+    border: 1px purple solid;
+
+} */
+.middlemiddle{
+    border: 2px black solid;
+    width: 100%;
+    background-color: goldenrod
+}
+/* .middleright{
+    border: 1px blue solid;
+    
+} */
+.bottom{
+    /* border: 1px blue solid; */
+    display: flex;
+    height: 40%;
+}
+.bottomleft{
+    border-right: 1px black solid;
+    width: 10%;
+    /* background-image: url(../images/bluepaper.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-attachment: scroll; */
+    /* box-sizing: border-box; */
+
+}
+.bottommiddle{
+    border-bottom: 1px black solid;
+    width: 3%;
+    background-color: goldenrod;
+
+}
+.bottomright{
+    border-left: 1px black solid;
+    width: 89%;
+    /* background-image: url(../images/bluepaper.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-attachment: scroll; */
+    /* box-sizing: border-box; */
+
+}
+/*-------------------------------------------------------------*/
+   
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-radius: 60px;
+  border-right: 60px solid green;
+}
+.arrow-right1{
+    width: 0; 
+    height: 0; 
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-radius: 60px;
+    border-right: 60px solid #21201E;
+    padding-left: 10px;
+    position: fixed;
+    
+}
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-radius: 60px;
+  border-left: 60px solid green;
+  /* padding-right: 100px */
+}
+.arrow-left1 {
+    width: 0; 
+    position: fixed;
+    height: 0; 
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-radius: 60px;
+    border-left: 60px solid #21201E;
+    padding-left: 100px;
+  
+}
+.endofwrapper{
+    display: flex;
+    width: 5vw;
+}
+
+
+
+
+

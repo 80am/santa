@@ -40,10 +40,16 @@ class Dashboard extends Component {
                     {/* <div class="parallax"></div> */}
 
                     <div className="leftlowerbox">
-                        <div className="stripecircle">
-                        <div className="fontwhitebox"></div>
+                        <div className="loweruperleft">
+
+                            <div className="stripecircle">
+                                <div className="fontwhitebox"></div>
+                            </div>
+                            <div className="blankwhitebox"></div>
                         </div>
-                        <div className="blankwhitebox"></div>
+                        <div className="lowerlowerleft">
+
+                        </div>
                     </div>
                     <div className="candycane">
                     
