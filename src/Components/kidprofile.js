@@ -147,7 +147,11 @@ class Kidprofile extends Component {
         //     // (this.onOpenModal()) 
         // })
     }
+    logOut(){
+        axios.get(`/auth/logout`)
+      .then((res) => {this.props.history.push('/')}
 
+      )}
 
     render() {
         const { open } = this.state;
@@ -269,9 +273,9 @@ class Kidprofile extends Component {
                         <Link to='https://santatracker.google.com/village.html'>
                         <button onClick={this.onCloseModal}>Check Out Santas World</button>
                         </Link>
-                        <Link to="/">
-                        <button>Go Back</button>
-                        </Link>
+                        {/* <Link to="/"> */}
+                        <button onClick={()=>this.logOut()}>Logout</button>
+                        {/* </Link> */}
                     </Modal>
                 </body1>
                 <div className="middlebody">

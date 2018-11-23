@@ -11,10 +11,38 @@ class kidLogin extends Component {
         super(props)
 
         this.state = {
-
+            email:'',
+            password:''
+            
         }
     }
+    updateEmail(e){
+        this.setState({ email: e.target.value })
+    }
+    
+      updatePassword(e){
+        this.setState({ password: e.target.value })
+    }
+    async login(){
+        if(!this.state.email || !this.state.password) return alert('wrongo fill in the rest')
+        let res = await axios.post(`/auth/login`, {
+          email: this.state.email,
+          password: this.state.password
+        }).then((res) => {
 
+            this.props.history.push('/kidprofile')
+
+        })
+      }
+    
+      async signup(){
+        if(!this.state.email || !this.state.password) return alert('wrongo fill in the rest')
+        let res = await axios.post(`/auth/signup`, {email: this.state.email, password: this.state.password})
+        console.log("we made it to the front end",res)
+      }
+      async logOut(){
+        axios.get(`/auth/logout`)
+      }
 
     render() {
         return (
@@ -37,10 +65,10 @@ class kidLogin extends Component {
                     </div>
                     <div className="downdownright">
                         <div className="loginbox">
-                            <input type="text" placeholder="UserName" />
-                            <input type="text" placeholder="PassWord" />
-                            <button>Register</button>
-                            <button>Login</button>
+                            <input type="text"onChange={(e)=> this.updateEmail(e)} placeholder="Email" />
+                            <input type="text" placeholder="PassWord" onChange={(e)=> this.updatePassword(e)} />
+                            <button onClick={()=>this.signup()}>Register</button>
+                            <button onClick={()=>this.login()}>Login</button>
                         </div>
                     </div>
                 </div>
