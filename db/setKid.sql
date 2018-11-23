@@ -1,0 +1,31 @@
+insert into boygirl(
+    firstname,
+    lastname,
+    address,
+    city,
+    state,
+    zip,
+    country,
+    wish,
+    age,
+    n_or_n,
+    deer,
+    kidpic,
+    toy_id
+)values(
+    $1,
+    $2,
+    $3,
+    $4,
+    $5,
+    $6,
+    $7,
+    $8,
+    $9,
+    $10,
+    $11,
+    $12,
+    $13
+    
+)
+returning*

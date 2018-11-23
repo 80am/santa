@@ -161,17 +161,40 @@ mainbody {
     margin: 5px;
   }
   .kidboxlowerhalf {
-    border: 2px goldenrod solid;
+    /* border: 2px goldenrod solid; */
     /* border-top: 2px goldenrod solid; */
     height: 40%;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
+  }
+  .moreinfobutton{
+    /* border: 2px solid purple; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+  }
+  .moreinfobutton button{
+    height: 4vh;
+    width: 6vw;
+    color: black;
+    background-color: white;
+    /* border-style: none; */
+    border-radius: 15px;
+    z-index: 5;
+    /* position: relative; */
+    border: 5px green thick;
+    margin: 5px;
   }
   .kidname {
     font-family: kaushan script, sans-serif;
     font-size: 25px;
+    display: flex;
+    flex-direction: column;
   }
   .rightlowerbox {
     /* border: 2px solid purple; */
@@ -218,8 +241,8 @@ mainbody {
     width: 13vw;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    background-image: linear-gradient(73deg, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2);
-    margin: 0 -101px 0 0;
+    background-image: linear-gradient(70deg, #C7342A,#C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2);
+    margin: 0 -109px 0 0;
     z-index: 9;
     display: flex;
     justify-content: flex-end;
@@ -270,6 +293,7 @@ mainbody {
     overflow: auto;
     overflow-x: hidden;
   }
+  
   .lowermiddleright {
     /* border: green solid 2px; */
     max-height: 100%;
@@ -306,7 +330,7 @@ mainbody {
     width: 13vw;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-image: linear-gradient(80deg, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A);
+    background-image: linear-gradient(78deg, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A,#DDDCE2);
     z-index: 9;
     display: flex;
     justify-content: flex-start;
@@ -347,7 +371,7 @@ mainbody {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    padding-top: 92px;
+    padding-top: 68px;
   }
   .text1 {
     font-family: kaushan script, sans-serif;

@@ -6,11 +6,13 @@ const initialState = {
         firstname: '',
         lastname: '',
         address: '',
+        city:'',
         state: '',
+        zip:'',
         country: '',
         wish: '',
         age: '',
-        deeds: '',
+        n_or_n: '',
         deer: '',
         kidPic: '',
         toyPic: ''
@@ -21,8 +23,9 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         //-----repeat below for each piece of state you are sending to redux
-        case 'ADD_FIRSTNAME':
-            var addfirstname = action.value
+        case "ADD_FIRSTNAME":
+        var addfirstname = action.value
+        console.log(action.value)
             var newState = {
                 ...state,
                 kid: {
@@ -45,6 +48,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 kid: {
                     ...state.kid, address: addaddress
+                }
+            }
+            return newState
+        case 'ADD_CITY':
+            var addcity = action.value
+            var newState = {
+                ...state,
+                kid: {
+                    ...state.kid, city: addcity
                 }
             }
             return newState
@@ -93,12 +105,12 @@ const reducer = (state = initialState, action) => {
                 }
             }
             return newState
-        case 'ADD_DEEDS':
-            var adddeeds = action.value
+        case 'ADD_N_OR_N':
+            var addn_or_n = action.value
             var newState = {
                 ...state,
                 kid: {
-                    ...state.kid, deeds: adddeeds
+                    ...state.kid, n_or_n: addn_or_n
                 }
             }
             return newState
@@ -131,7 +143,7 @@ const reducer = (state = initialState, action) => {
             return newState
 
 
-
+            default: return state
 
 
     }

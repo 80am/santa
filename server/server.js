@@ -3,10 +3,15 @@ const express = require('express')
 const massive = require('massive')
 const socket = require('socket.io')
 const ctrl = require('./controller')
+const session = require('express-session')
+const bodyParser = require('body-parser')
+
 
 const{
     MASSIVE_CONNECTION,
-    SERVER_PORT
+    SERVER_PORT,
+    SESSION_SECRET,
+    CONNECTION_STRING,
 } = process.env
 
 const app = express()
@@ -17,10 +22,17 @@ massive(MASSIVE_CONNECTION).then(db=>{
 })
 
 app.use(express.json())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true}))
+// app.use(session({
+//     secret: SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: true
+// }))
 
+app.post('/api/sendToSanta/', ctrl.sendToSanta)
 app.get('/api/getallkids', ctrl.getallKids)
-// app.get('/api/getallkids', ctrl.getallKids)
-// app.get('/api/getallkids', ctrl.getallKids)
+// app.post('/api/login', ctrl.uLogin)
 // app.get('/api/getallkids', ctrl.getallKids)
 // app.get('/api/getallkids', ctrl.getallKids)
 

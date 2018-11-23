@@ -1,0 +1,86 @@
+.mainDiv{
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* align-items: center; */
+    height: 100vw;
+    width: 100vw;
+    
+    /* flex-direction: column; */
+
+}
+.leftbody1{
+    /* border: 2px solid purple; */
+    /* background-color: black; */
+    display: flex;
+    height: 100%;
+    width: 44vw;
+    background-image: url('../images/colortree.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+}
+.rightbody1{
+    /* border: 2px solid red; */
+    background-color: transparent;
+    display: flex;
+    height: 100%;
+    width: 55vw;
+    flex-direction: column;
+}
+.treePic{
+    
+    height: 100px;
+    width: 100px;
+    
+}
+.upupright{
+    /* border: 2px solid green; */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    margin: 0 0 0 -132px
+}
+.downdownright{
+    /* border: 2px solid blue; */
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 50%;
+    display: flex;
+
+
+}
+.loginbox{
+    background-color: red;
+    border: 3px green dotted;
+    height: 100px;
+    width: 200px;
+}
+.santa1{
+    /* border: 1px black solid; */
+    display: flex;
+    justify-content: center;
+    color:green;
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 4vh;
+    height: 20vh;
+    /* width: 100vw; */
+    align-items: center;
+    
+    /* flex-direction: row; */
+    /* display: flex; */
+    /* justify-content: flex-start; */
+}
+h1{
+    color:  #812122;
+    cursor: none;
+}

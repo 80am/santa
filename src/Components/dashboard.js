@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import Tree from '../images/christmastree.jpg';
 import './dashboard.css';
 import Gcheck from '../images/green circle.jpg';
+import { Menu, Icon, Button } from 'antd';
+
 
 class Dashboard extends Component {
   constructor(props) {
@@ -13,6 +15,8 @@ class Dashboard extends Component {
 
     this.state = {
       kids: [],
+      collapsed: false,
+
     };
   }
 
@@ -23,6 +27,7 @@ class Dashboard extends Component {
   }
 
   render() {
+    const SubMenu = Menu.SubMenu;
     const nicekids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(nicekid => {
       return (
         <div className="kidbox" key={nicekid.kid_id}>
@@ -32,6 +37,7 @@ class Dashboard extends Component {
                 <img src={`${nicekid.kidpic}`} alt="" height="100%" width="75%" />
               </div>
               <div className="kidboxlowerhalf">
+              <div>
                 <a className="kidname">
                   {`${nicekid.firstname}`.toUpperCase()}
                   <br />
@@ -40,6 +46,11 @@ class Dashboard extends Component {
                 <a>{`${nicekid.toy_name}`.toUpperCase()}</a>
               </div>
             </div>
+            <div className="moreinfobutton">
+            <button>More Info</button>
+                </div>
+             </div>
+            
             <div className="kidboxrightinfo">
               <div className="giftready">
                 <img src={`${nicekid.toy_picture}`} alt="" height="100%" width="100%" />
@@ -62,6 +73,7 @@ class Dashboard extends Component {
                 <img src={`${naughtyKid.kidpic}`} alt="" height="100%" width="75%" />
               </div>
               <div className="kidboxlowerhalf">
+              <div >
                 <a className="kidname">
                   {`${naughtyKid.firstname}`.toUpperCase()}
                   <br />
@@ -69,7 +81,12 @@ class Dashboard extends Component {
                 </a>
                 <a>{`${naughtyKid.toy_name}`.toUpperCase()}</a>
               </div>
-            </div>
+              </div>
+              <div className="moreinfobutton">
+                <button>More Info</button>
+                </div>
+              </div>
+            
             <div className="kidboxrightinfo">
               <div className="giftready">
                 <img src={`${naughtyKid.toy_picture}`} alt="" height="100%" width="100%" />
@@ -110,6 +127,9 @@ class Dashboard extends Component {
               <div className="blankwhitebox" />
             </div>
             <div className="lowerlowerleft" />
+            {/* ------------------------------------------------------  */}
+            
+            {/* ------------------------------------------------------  */}
           </div>
           <div className="candycane" />
           <div className="middlelowerbox">

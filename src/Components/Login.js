@@ -18,11 +18,7 @@ class Login extends Component {
         // this.handleCloseModal = this.handleCloseModal.bind(this)
     }
 
-    // onOpenModal = () => {
-    //     this.setState({
-    //         open: true
-    //     })
-    // }
+   
     handleCloseModal = () => {
         this.setState({
             showModal:'hide'
@@ -75,7 +71,7 @@ class Login extends Component {
                                 {/* </Link> */}
                             </div>
                             <div className="imakid">
-                                <Link to="/kidprofile">
+                                <Link to="/kidLogin">
                                     <button>GET ON SANTAS LIST</button>
                                 </Link>
                             </div>

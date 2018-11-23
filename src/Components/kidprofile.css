@@ -1,9 +1,9 @@
 mainapp{
     display: flex;
     flex-direction: column;
+    background-color: maroon;
 }
 .body1{
-    background-color: maroon;
     /* background-image: url(../images/socks.jpg); */
     background-size: cover;
     background-position: center;
@@ -15,7 +15,19 @@ mainapp{
     justify-content: flex-end;
     display: flex;
     align-items: center;
+    /* flex-direction: column; */
+}
+.bodyleft{
+    width: 20%;
+}
+.bodyright{
+    width: 25%;
+}
+.bodycenter{
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .boxlid{
     border: 10px green solid;
@@ -39,18 +51,18 @@ mainapp{
     border-top: none;
     background-color: #EFE5D5;
     box-shadow: 5px 5px 18px black;
-    margin: 0 0 15px 0
+    margin: 0 0 0px 0
 
     
 }
 .inputboxleft{
     border-right: 2px green solid;
-    height: 100%;
+    height: 96%;
     width: 33%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     border-top: none;
     /* background-image: url('../images/spiralwrap.jpg');
     background-size: cover;
@@ -88,14 +100,18 @@ mainapp{
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
 .kidpic{
     border: 1px red solid;
-    height: 65%;
-    width: 60%;
+    height: 100%;
+    width: 100%;
+    margin: 0 0 15px 0
+}
+.imageuploader{
+    padding: 0;
 }
 .boxleftdown{
     /* border: 1px purple solid; */
@@ -129,6 +145,11 @@ mainapp{
 .inputboxright div{
     /* border: 5px black solid; */
     width: 100%
+}
+.bodyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .middlebody{
     display: flex;
