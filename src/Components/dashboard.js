@@ -7,6 +7,8 @@ import Tree from '../images/christmastree.jpg';
 import './dashboard.css';
 import Gcheck from '../images/green circle.jpg';
 import { Menu, Icon, Button } from 'antd';
+import ReactCardFlip from 'react-card-flip';
+
 
 
 class Dashboard extends Component {
@@ -16,8 +18,15 @@ class Dashboard extends Component {
     this.state = {
       kids: [],
       collapsed: false,
+      isFlipped: false,
 
     };
+    this.handleClick = this.handleClick.bind(this);
+
+  }
+  handleClick(e) {
+    e.preventDefault();
+    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
   }
 
   componentDidMount() {
@@ -30,7 +39,11 @@ class Dashboard extends Component {
     const SubMenu = Menu.SubMenu;
     const nicekids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(nicekid => {
       return (
-        <div className="kidbox" key={nicekid.kid_id}>
+
+        // <ReactCardFlip isFlipped={this.state.isFlipped}>
+        // <div key="front">
+        
+        <div className="kidbox" key={nicekid.kid_id} >
           <div className="kidboxborder">
             <div className="kidboxlefthalf">
               <div className="kidboxpicture1">
@@ -47,7 +60,7 @@ class Dashboard extends Component {
               </div>
             </div>
             <div className="moreinfobutton">
-            <button>More Info</button>
+            <button onClick={this.handleClick}>More Info</button>
                 </div>
              </div>
             
@@ -62,6 +75,12 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
+        // </div>
+        // <div className="kidbox" key = "back">
+        //   hellow world
+        // </div>
+        // </ReactCardFlip>
+
       );
     });
     const naughtykids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'naughty').map(naughtyKid => {
@@ -109,6 +128,7 @@ class Dashboard extends Component {
             <h1>S</h1>.wiftly <h1>A</h1>.llocating <h1>N</h1>.ew <h1>T</h1>.hings to <h1>A</h1>.ll
           </div>
           <div className="headercenter">
+            
             <p> ~The List~</p>
           </div>
           <div className="reathimage">
@@ -121,15 +141,21 @@ class Dashboard extends Component {
 
           <div className="leftlowerbox">
             <div className="loweruperleft">
+            <Icon type="home" />
+            <Icon type="calendar" />
+            <Icon type="customer-service" />
+            <Icon type="message" />
+            </div>
+            <div className="lowerlowerleft">
+            {/* ------------------------------------------------------  */}
+            
               <div className="stripecircle">
                 <div className="fontwhitebox" />
               </div>
               <div className="blankwhitebox" />
-            </div>
-            <div className="lowerlowerleft" />
+
             {/* ------------------------------------------------------  */}
-            
-            {/* ------------------------------------------------------  */}
+          </div>
           </div>
           <div className="candycane" />
           <div className="middlelowerbox">

@@ -6,7 +6,13 @@ import './kidprofile.css'
 import { connect } from 'react-redux'
 import Modal from 'react-responsive-modal'
 // import { Upload, message, Button, Icon } from 'antd';
-import ImageUploader from 'react-images-upload';
+import ImageUploader from 'react-images-upload'
+import { v4 as randomString } from 'uuid'
+import Dropzone from 'react-dropzone'
+import { GridLoader } from 'react-spinners';
+
+
+
 
 
 
@@ -30,9 +36,14 @@ class Kidprofile extends Component {
             kidPic: "",
             toyPic: "",
             open: false,
-            pictures: [],
+            // kidpictures: [],
+            // toypictures: [],
+            isUploading: false,
+            url: '',
+          
         }
-        this.onDrop = this.onDrop.bind(this);
+        // this.onDrop = this.onDrop.bind(this);
+        // this.onDrop1 = this.onDrop1.bind(this);
         this.handleFirst = this.handleFirst.bind(this)
         this.handleLast = this.handleLast.bind(this)
         this.handleAddress = this.handleAddress.bind(this)
@@ -47,11 +58,69 @@ class Kidprofile extends Component {
         this.sendToSanta = this.sendToSanta.bind(this)
 
     }
-    onDrop(picture) {
-        this.setState({
-            pictures: this.state.pictures.concat(picture),
+
+    getSignedRequest = ([file]) => {
+        console.log(file)
+        this.setState({ isUploading: true });
+        const fileName = `${randomString()}-${file.name.replace(/\s/g, '-')}`;
+        axios
+        .get('/api/amazons3', {params: {'file-name': fileName,'file-type': file.type},
+        })
+        .then(response => {
+          const { signedRequest, url } = response.data;
+          this.uploadFile(file, signedRequest, url);
+        })
+        .catch(err => {
+          console.log(err);
         });
     }
+    uploadFile = (file, signedRequest, url) => {
+        console.log(url)
+        const options = {
+          headers: {
+            'Content-Type': file.type,
+          },
+        };
+    
+        axios
+          .put(signedRequest, file, options)
+          .then(response => {
+            this.setState({ isUploading: false, url })
+            // .then(console.log("this is the url",url))
+            // THEN DO SOMETHING WITH THE URL. SEND TO DB 
+          })
+          
+          .catch(err => {
+            this.setState({
+              isUploading: false,
+            });
+            if (err.response.status === 403) {
+              alert(
+                `Your request for a signed URL failed with a status 403. Double check the CORS configuration and bucket policy in the README. You also will want to double check your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in your .env and ensure that they are the same as the ones that you created in the IAM dashboard. You may need to generate new keys\n${
+                  err.stack
+                }`
+              );
+            } else {
+              alert(`ERROR: ${err.status}\n ${err.stack}`);
+            }
+          });
+          console.log(url)
+          this.props.addkidPic(url)
+          console.log(url)
+      };
+    
+
+
+    // onDrop(picture) {
+    //     this.setState({
+    //         kidpictures: this.state.kidpictures.concat(picture),
+    //     });
+    // }
+    // onDrop1(picture) {
+    //     this.props.addtoyPic({
+    //         toypictures: this.state.toypictures.concat(picture),
+    //     });
+    // }
     onOpenModal = () => {
         this.setState({
             open: true
@@ -128,9 +197,9 @@ class Kidprofile extends Component {
     handleDeer(e) {
         this.props.adddeer(e.target.value)
     }
-    handlekidPic(e) {
-        this.props.addkidPic(e.target.value)
-    }
+    // handlekidPic(e) {
+    //     this.props.addkidPic(e.target.value)
+    // }
     handletoyPic(e) {
         this.props.addtoyPic(e.target.value)
     }
@@ -155,6 +224,7 @@ class Kidprofile extends Component {
 
     render() {
         const { open } = this.state;
+        const { url, isUploading } = this.state;
         // var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
         // var x = setInterval(function () {
         //     var now = new Date().getTime();
@@ -171,24 +241,7 @@ class Kidprofile extends Component {
         // }, 1000);
 
 
-        // const props = {
-        //     name: 'file',
-        //     action: '//jsonplaceholder.typicode.com/posts/',
-        //     headers: {
-        //       authorization: 'authorization-text',
-        //     },
-        //     onChange(info) {
-        //       if (info.file.status !== 'uploading') {
-        //         console.log(info.file, info.fileList);
-        //       }
-        //       if (info.file.status === 'done') {
-        //         message.success(`${info.file.name} file uploaded successfully`);
-        //       } else if (info.file.status === 'error') {
-        //         message.error(`${info.file.name} file upload failed.`);
-        //       }
-        //     },
-        //   };
-          
+       
 
         return (
             <mainapp>
@@ -200,34 +253,59 @@ class Kidprofile extends Component {
                         <div className="inputboxleft">
                             <div className="boxleftup">
                                 {/* <div className="kidpic"> </div> */}
-                                <ImageUploader 
-                                // height="100%" width="100%"
-                                    withIcon={true}
-                                    buttonText='Kid Picture'
-                                    onChange={this.onDrop}
-                                    imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                                    maxFileSize={5242880}
-                                    withPreview={true}
-                                    className="imageuploader"
-                                    padding='0'
-                                    />
+
+                        <Dropzone
+                            onDropAccepted={this.getSignedRequest}
+                            style={{
+                                // position: 'relative',
+                                width: 100,
+                                height: 100,
+                                borderWidth: 5,
+                                marginTop: 12,
+                                borderColor: 'rgb(102, 102, 102)',
+                                borderStyle: 'dashed',
+                                borderRadius: 5,
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                fontSize: 20,
+                                // paddingBottom: 100,
+                                }}
+                                accept="image/*"
+                                multiple={true}
+                                >
+                            {isUploading ? <GridLoader /> : <p>Your Picture</p>}
+                        </Dropzone>
+                        <br/>
+                        <img src={url} alt="" width="100%"/>                               
                                
                                 
                             </div>
                             <div className="boxleftdown">
-                                {/* <div className="kidpic"></div> */}
-                                <ImageUploader 
-                                // height="100%" width="100%"
-                                    withIcon={true}
-                                    buttonText='Toy Picture'
-                                    onChange={this.onDrop}
-                                    imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                                    maxFileSize={5242880}
-                                    withPreview={true}
-                                    className="imageuploader"
-                                    />
-                                {/* <button>Upload Toy Picture</button> */}
-                                
+
+                        <Dropzone
+                            onDropAccepted={this.getSignedRequest}
+                            style={{
+                                position: 'relative',
+                                width: 100,
+                                height: 100,
+                                borderWidth: 5,
+                                marginTop: 12,
+                                borderColor: 'rgb(102, 102, 102)',
+                                borderStyle: 'dashed',
+                                borderRadius: 5,
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                fontSize: 20,
+                                }}
+                                accept="image/*"
+                                multiple={false}
+                                >
+                        {isUploading ? <GridLoader /> : <p>Toy Picture</p>}
+                        </Dropzone>
+                        <br/>
+                        <img src={url} alt="" width="100%"/>                                
                             </div>
                         </div>
 
@@ -266,15 +344,17 @@ class Kidprofile extends Component {
                     </div>
                     <div className="bodyright">
                     <button onClick={this.sendToSanta}>Add to Santas List</button>
+                    <br/>
+                    <button onClick={()=>this.logOut()}>Logout</button>
                     </div>
                     <Modal open={open} onClose={this.onCloseModal}>
                         <h2>THANK YOU!!</h2> 
                             You are on Santas list. He is curently checking it twice
-                        <Link to='https://santatracker.google.com/village.html'>
+                        
                         <button onClick={this.onCloseModal}>Check Out Santas World</button>
-                        </Link>
+                        
                         {/* <Link to="/"> */}
-                        <button onClick={()=>this.logOut()}>Logout</button>
+                        
                         {/* </Link> */}
                     </Modal>
                 </body1>
@@ -303,7 +383,7 @@ class Kidprofile extends Component {
                         </div>
                         <div className="bottom">
                             <div className="bottomleft"></div>
-                            <div className="bottommiddle"></div>
+                            <div className="bottommiddle">{this.props.kidPic}</div>
                             <div className="bottomright"></div>
                         </div>
                     </div>

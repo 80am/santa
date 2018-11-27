@@ -128,7 +128,7 @@ const reducer = (state = initialState, action) => {
             var newState = {
                 ...state,
                 kid: {
-                    ...state.kid, kidpic: addkidPic
+                    ...state.kid, kidPic: addkidPic
                 }
             }
             return newState

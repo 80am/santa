@@ -32,8 +32,8 @@ class kidLogin extends Component {
 
             this.props.history.push('/kidprofile')
 
-        })
-      }
+        }).catch((err) => { alert("Did not find that Email or Password. Please try again or Register") }
+        )}
     
       async signup(){
         if(!this.state.email || !this.state.password) return alert('wrongo fill in the rest')

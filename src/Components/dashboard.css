@@ -45,7 +45,7 @@ mainbody {
     height: 100%;
     width: 40%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     font-size: 3vh;
     font-family: roboto, sans-serif;
@@ -111,21 +111,21 @@ mainbody {
     margin: 3px;
   }
   .kidboxlefthalf {
-    border: 1px black solid;
+    /* border: 1px black solid; */
     height: 100%;
     width: 70%;
     display: flex;
     flex-direction: column;
   }
   .kidboxpicture {
-    border: 1px black solid;
+    /* border: 1px black solid; */
     height: 60%;
     width: 100%;
     /* background-image: url('../images/flames.jpg'); */
     background-position: center
   }
   .kidboxpicture1 {
-    border: 1px black solid;
+    /* border: 1px black solid; */
     height: 60%;
     width: 100%;
     /* background-image: url('../images/clouds.jpg') */
@@ -219,33 +219,42 @@ mainbody {
     /* background-color: black */
   }
   .loweruperleft {
+    /* border: 2px solid purple; */
     height: 50%;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    color: #812122;
+    justify-content: space-around;
+    /* align-items: center; */
+    flex-direction: column;
+    font-size: 3vh;
+    padding-top: 25px;
+    /* justify-content: flex-end; */
   }
   .lowerlowerleft {
+    /* border: 2px solid purple; */
     height: 50%;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* flex-direction: column; */
   }
-  /* .leftlowerbox .blankwhitebox{
-      border: black 1px solid
-      display: flex;
-      justify-content: flex-start
-  } */
+  
   .stripecircle {
     border: 2px solid black;
     /* border-right: none; */
-    border-bottom: none;
+    border-top: none;
     height: 30vh;
     width: 13vw;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     background-image: linear-gradient(70deg, #C7342A,#C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2);
-    margin: 0 -109px 0 0;
+    margin: 0 -97px 0 0;
     z-index: 9;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     position: relative;
@@ -258,15 +267,15 @@ mainbody {
     background-color: #efe5d5;
     position: relative;
     z-index: 2;
-    margin: 0 -27px 0 0;
+    margin: 0 -25px 0 0;
   }
   .fontwhitebox {
     border: 2px black solid;
-    border-bottom: none;
-    height: 91%;
+    border-top: none;
+    height: 89%;
     width: 75%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     background-color: white;
     
   }
