@@ -37,6 +37,7 @@ module.exports={
         .then( (newToy)=>{
 
             console.log("this is the newToy", newToy[0].toy_id)
+            console.log("this is session id",req.session.user)
             db.setKid([req.body.firstname,
                 req.body.lastname,
                 req.body.address,
@@ -49,11 +50,17 @@ module.exports={
                 req.body.n_or_n,
                 req.body.deer,
                 req.body.kidPic,
-                newToy[0].toy_id])
+                newToy[0].toy_id,
+                req.session.user.id_of_user])
             .then((newitem)=>{res.status(200).send(newitem)})
         })
     // } catch (error) {
     //     console.log(error)
     // }
+    },
+    getPastWish: (req,res) =>{
+        console.log("this is the req.session.user",req.session.user.id_of_user)
+        const db=req.app.get('db')
+        db.getpastWish([req.session.user.id_of_user])
     }
 }

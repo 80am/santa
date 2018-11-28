@@ -21,7 +21,7 @@ mainapp{
     width: 20%;
 }
 .bodyright{
-    border: 1px purple solid;
+    /* border: 1px purple solid; */
     width: 25%;
     display: flex;
     flex-direction: column;
@@ -75,6 +75,7 @@ mainapp{
 } */
 .inputboxright{
     /* border: 1px blue solid; */
+    
     height: 100%;
     width: 77%;
     border-top: none;
@@ -91,7 +92,32 @@ mainapp{
     background: transparent;
     font-family: kaushan script, sans-serif, roboto;
     font-size: 20px;
-    
+}
+.statezipcountry{
+    display: flex;
+}
+.logoutAdd{
+    /* border: 1px black solid; */
+    display: flex;
+    justify-content: space-around;
+}
+.logoutAdd button{
+    height: 40px;
+    border-radius: 10px;
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    color: white;
+    font-size: 30px;
+    text-shadow: #21201E 0 10px 10px;
+    font-family: kaushan script, sans-serif, roboto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 18px gray;
 }
 .boxleftup{
     /* border: 1px black solid; */
@@ -226,12 +252,11 @@ mainapp{
 .middlemiddle{
     border: 2px black solid;
     width: 100%;
-    background-color: goldenrod
-}
-/* .middleright{
-    border: 1px blue solid;
+    background-color: goldenrod;
+    display: flex;
+    justify-content: space-around;
     
-} */
+}
 .bottom{
     /* border: 1px blue solid; */
     display: flex;
@@ -256,6 +281,9 @@ mainapp{
 .bottomright{
     border-left: 1px black solid;
     width: 89%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     /* background-image: url(../images/bluepaper.jpg); */
     /* background-size: cover; */
     /* background-position: center; */
@@ -316,6 +344,20 @@ mainapp{
 .endofwrapper{
     display: flex;
     width: 5vw;
+    
+}
+.bottomright button{
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 30px;
+    border-radius: 30px;
+    height: 75%;
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 5px 5px 18px black;
     
 }
 

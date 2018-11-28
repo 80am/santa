@@ -1,4 +1,5 @@
 insert into boygirl(
+    id_of_user,
     firstname,
     lastname,
     address,
@@ -13,6 +14,7 @@ insert into boygirl(
     kidpic,
     toy_id
 )values(
+    $14,
     $1,
     $2,
     $3,

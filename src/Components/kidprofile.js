@@ -36,14 +36,13 @@ class Kidprofile extends Component {
             kidPic: "",
             toyPic: "",
             open: false,
-            // kidpictures: [],
-            // toypictures: [],
             isUploading: false,
+            isUploading1: false,
             url: '',
+            toyurl: '',
           
         }
-        // this.onDrop = this.onDrop.bind(this);
-        // this.onDrop1 = this.onDrop1.bind(this);
+        
         this.handleFirst = this.handleFirst.bind(this)
         this.handleLast = this.handleLast.bind(this)
         this.handleAddress = this.handleAddress.bind(this)
@@ -58,8 +57,12 @@ class Kidprofile extends Component {
         this.sendToSanta = this.sendToSanta.bind(this)
 
     }
+    componentDidMount(){
+
+    }
 
     getSignedRequest = ([file]) => {
+        console.log(this.state.url)
         console.log(file)
         this.setState({ isUploading: true });
         const fileName = `${randomString()}-${file.name.replace(/\s/g, '-')}`;
@@ -68,6 +71,7 @@ class Kidprofile extends Component {
         })
         .then(response => {
           const { signedRequest, url } = response.data;
+          console.log(url)
           this.uploadFile(file, signedRequest, url);
         })
         .catch(err => {
@@ -85,6 +89,7 @@ class Kidprofile extends Component {
         axios
           .put(signedRequest, file, options)
           .then(response => {
+            console.log(url)
             this.setState({ isUploading: false, url })
             // .then(console.log("this is the url",url))
             // THEN DO SOMETHING WITH THE URL. SEND TO DB 
@@ -107,9 +112,68 @@ class Kidprofile extends Component {
           console.log(url)
           this.props.addkidPic(url)
           console.log(url)
+          console.log(this.state.url)
+
       };
     
+//--------------------------------------------------------------------------
 
+getSignedRequest1 = ([file]) => {
+    console.log(this.state.toyurl)
+    console.log(file)
+    this.setState({ isUploading1: true });
+    const fileName = `${randomString()}-${file.name.replace(/\s/g, '-')}`;
+    axios
+    .get('/api/amazons33', {params: {'file-name': fileName,'file-type': file.type},
+    })
+    .then(response => {
+      const { signedRequest, toyurl } = response.data;
+      console.log(toyurl)
+      this.uploadFile1(file, signedRequest, toyurl);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+uploadFile1 = (file, signedRequest, toyurl) => {
+    console.log(toyurl)
+    const options = {
+      headers: {
+        'Content-Type': file.type,
+      },
+    };
+
+    axios
+      .put(signedRequest, file, options)
+      .then(response => {
+        console.log(toyurl)
+        this.setState({ isUploading1: false, toyurl })
+        // .then(console.log("this is the url",url))
+        // THEN DO SOMETHING WITH THE URL. SEND TO DB 
+      })
+      
+      .catch(err => {
+        this.setState({
+          isUploading1: false,
+        });
+        if (err.response.status === 403) {
+          alert(
+            `Your request for a signed URL failed with a status 403. Double check the CORS configuration and bucket policy in the README. You also will want to double check your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in your .env and ensure that they are the same as the ones that you created in the IAM dashboard. You may need to generate new keys\n${
+              err.stack
+            }`
+          );
+        } else {
+          alert(`ERROR: ${err.status}\n ${err.stack}`);
+        }
+      });
+      console.log(toyurl)
+      this.props.addtoyPic(toyurl)
+      console.log(toyurl)
+      console.log(this.state.toyurl)
+
+  };
+
+//--------------------------------------------------------------------------
 
     // onDrop(picture) {
     //     this.setState({
@@ -225,23 +289,7 @@ class Kidprofile extends Component {
     render() {
         const { open } = this.state;
         const { url, isUploading } = this.state;
-        // var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
-        // var x = setInterval(function () {
-        //     var now = new Date().getTime();
-        //     var distance = countDownDate - now;
-        //     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        //     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        //     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        //     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        //     var clocks = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        //     if (distance < 0) {
-        //         clearInterval(x);
-        //         var clocks = "SANTA WILL BE BACK NEXT YEAR";
-        //     }
-        // }, 1000);
-
-
-       
+        const { toyurl, isUploading1 } = this.state
 
         return (
             <mainapp>
@@ -284,7 +332,7 @@ class Kidprofile extends Component {
                             <div className="boxleftdown">
 
                         <Dropzone
-                            onDropAccepted={this.getSignedRequest}
+                            onDropAccepted={this.getSignedRequest1}
                             style={{
                                 position: 'relative',
                                 width: 100,
@@ -300,23 +348,29 @@ class Kidprofile extends Component {
                                 fontSize: 20,
                                 }}
                                 accept="image/*"
-                                multiple={false}
+                                multiple={true}
                                 >
-                        {isUploading ? <GridLoader /> : <p>Toy Picture</p>}
+                        {isUploading1 ? <GridLoader /> : <p>Toy Picture</p>}
                         </Dropzone>
                         <br/>
-                        <img src={url} alt="" width="100%"/>                                
+                        <img src={toyurl} alt="" width="100%"/>                                
                             </div>
                         </div>
 
                         <div className="inputboxright">
+                            <div className="statezipcountry">
                             <input type="text" onChange={this.handleFirst} placeholder="First Name" />
                             <input type="text" onChange={this.handleLast}  placeholder="Last Name" />
+                            </div>
+                            <div className="statezipcountry">
                             <input type="text" onChange={this.handleAddress}  placeholder="Street Address" />
                             <input type="text" onChange={this.handleCity} placeholder="City" />
+                            </div>
+                            <div className="statezipcountry">
                             <input type="text" onChange={this.handleState} placeholder="State" />
                             <input type="text" onChange={this.handleZip}  placeholder="Zip" />
                             <input type="text" onChange={this.handleCountry}  placeholder="Country" />
+                            </div>
                             <input type="text" onChange={this.handleWish}  placeholder="Gift from Santa?" />
                             <input type="text" onChange={this.handleAge}  placeholder="Age" />
                             <input type="text" onChange={this.handleDeeds}  placeholder="0-100 Deeds?" />
@@ -339,19 +393,21 @@ class Kidprofile extends Component {
                             </div>
 
                             {/* <input type="text" onChange={this.handleDeer} value={this.props.deer} placeholder="Favorite Reindeer"/> */}
+                    <div className="logoutAdd">
+                    
+                    {/* <br/> */}
+                    <button onClick={this.sendToSanta}>Add to Santas List</button>
+                        </div>
                         </div>
                     </div>
                     </div>
                     <div className="bodyright">
-                    <button onClick={this.sendToSanta}>Add to Santas List</button>
-                    <br/>
-                    <button onClick={()=>this.logOut()}>Logout</button>
                     </div>
                     <Modal open={open} onClose={this.onCloseModal}>
                         <h2>THANK YOU!!</h2> 
                             You are on Santas list. He is curently checking it twice
                         
-                        <button onClick={this.onCloseModal}>Check Out Santas World</button>
+                        <button onClick={this.componentDidMount()}>Check Out Santas World</button>
                         
                         {/* <Link to="/"> */}
                         
@@ -383,8 +439,18 @@ class Kidprofile extends Component {
                         </div>
                         <div className="bottom">
                             <div className="bottomleft"></div>
-                            <div className="bottommiddle">{this.props.kidPic}</div>
-                            <div className="bottomright"></div>
+                            <div className="bottommiddle"></div>
+                            <div className="bottomright">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <button onClick={()=>this.logOut()}>Logout</button>
+                            <Link to='/kidpast'>
+                            <button>View Past Wishes</button>
+                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

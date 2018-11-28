@@ -1,0 +1,236 @@
+.kidpastbackground{
+    height: 100vh;
+    width: 100vw;
+    background-color: #800000;
+    /* display: flex; */
+    display: flex;
+    flex-direction: column;
+
+
+}
+.backbutton{
+    height: 6vh;
+}
+.backbutton button{
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 30px;
+    border-radius: 30px;
+    height: 75%;
+    width: 200px;
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 5px 5px 18px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bodycenter1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.outmostdiv{
+    display: flex;
+    /* flex-direction: column; */
+}
+.boxlid1{
+    border: 10px green solid;
+    width: 29vw;
+    height: 8vh;
+    background-color: #EFE5D5;
+    box-shadow: 5px 5px 18px black;
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    display: flex;
+    font-family: kaushan script, sans-serif, roboto;
+    justify-content: space-around;
+    color: white;
+    font-size: 40px;
+    text-shadow: #21201E 0 10px 10px;
+    font-family: kaushan script, sans-serif, roboto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 5px 5px 18px gray; */
+
+    
+}
+.inputbigbox1{
+    border: 10px green solid;
+    display: flex;
+    height: 29vh;
+    width: 26vw;
+    border-top: none;
+    background-color: #EFE5D5;
+    box-shadow: 5px 5px 18px black;
+    margin: 0 0 0px 0;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+.inputboxtop1{
+    border: 2px green solid;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+}
+/* .inputboxcenter{
+    border: 1px black solid;
+    height: 100%;
+    width: 33%;
+} */
+.inputboxbottom1{
+    /* border: 1px blue solid; */
+    height: 100%;
+    width: 100%;
+    border-top: none;
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: space-around; */
+    font-family: kaushan script, sans-serif, roboto;
+}
+.inputboxright1 input{
+    font-family: kaushan script, sans-serif, roboto;
+    text-align: center;
+    height: 10%;
+    width: 60%;
+    border-style: none;
+    background: transparent;
+    font-size: 20px;
+}
+.statezipcountry1{
+    display: flex;
+}
+.logoutAdd1{
+    /* border: 1px black solid; */
+    display: flex;
+    font-family: kaushan script, sans-serif, roboto;
+    justify-content: space-around;
+
+}
+.logoutAdd1 button{
+    height: 40px;
+    border-radius: 10px;
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    color: white;
+    font-size: 30px;
+    text-shadow: #21201E 0 10px 10px;
+    font-family: kaushan script, sans-serif, roboto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 18px gray;
+}
+.boxleftup1{
+    border-bottom: 3px goldenrod solid;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* flex-direction: column; */
+    /* padding-bottom: 60px; */
+}
+.kidpic1{
+    border: 1px red solid;
+    height: 100%;
+    width: 100%;
+    margin: 0 0 15px 0
+}
+.imageuploader{
+    padding: 0;
+}
+.boxleftdown1{
+    /* border: 1px purple solid; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 30px;
+
+}
+.boxleftdowndown1{
+    /* border-top: 3px goldenrod solid; */
+    height: 50%;
+    background-color: #EFE5D5
+}
+.inputboxright1 select{
+    height: 7%;
+    width: 40%;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.2);
+    background-color: transparent;
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 20px;
+    border-style: none;
+    color: red;
+    padding-left: 10%;
+ 
+
+}
+.inputboxright1 span{
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 20px;
+    color: #757575
+   
+}
+.inputboxright1 div{
+    /* border: 5px black solid; */
+    width: 100%
+}
+.bodyright1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.niceNaughty{
+    border: green 4px dashed;
+    height: 40px;
+    width: 28vw;
+    background-color: #EFE5D5;
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 23px;
+}
+.innerbox{
+    border: 2px red dashed;
+    height: 32px;
+    width: 27.5vw;
+}
+.giftpic{
+    border-bottom: 3px solid goldenrod;
+    border-left: 3px solid goldenrod;
+    height: 100%;
+    width: 50%;
+}
+.giftNameFromSanta{
+    height: 50%;
+    font-family: kaushan script, sans-serif, roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
