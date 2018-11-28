@@ -62,5 +62,7 @@ module.exports={
         console.log("this is the req.session.user",req.session.user.id_of_user)
         const db=req.app.get('db')
         db.getpastWish([req.session.user.id_of_user])
+        .then((newitem)=>{res.status(200).send(newitem)})
+
     }
 }

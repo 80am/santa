@@ -32,14 +32,8 @@ class kidpast extends Component {
 
     render(){
         console.log(this.state.oldWish)
-
-        return(
-            <div className="kidpastbackground">
-                <div className="backbutton">
-                <Link to="./kidprofile">
-                <button>Go Back</button>
-                </Link>
-                </div>
+        const pastWish = this.state.oldWish.map(oneOldWish =>{
+            return(
                 <div className="outmostdiv">
                 <div className="bodycenter1">
                     <button className="boxlid1">Delete this Wish</button>
@@ -59,12 +53,7 @@ class kidpast extends Component {
                             Gift from Santa
                             </div>
 
-                            {/* <input type="text" onChange={this.handleDeer} value={this.props.deer} placeholder="Favorite Reindeer"/> */}
-                    {/* <div className="logoutAdd1">
-                    <button onClick={()=>this.delete()}>Delete this Wish</button> */}
-                    {/* <br/> */}
-                    {/* <button onClick={this.sendToSanta}>Add to Santas List</button> */}
-                        {/* </div> */}
+                            
                         </div>
                     </div>
                     <div className="niceNaughty">
@@ -74,8 +63,27 @@ class kidpast extends Component {
                     </div>
                     </div>
                     </div>
+            )
+            
+        })
+
+        return(
+            <div className="kidpastbackground">
+                <div className="backbutton">
+                <Link to="./kidprofile">
+                <button>Go Back</button>
+                </Link>
+                </div>
+               
             </div>
         )
     }
 }
 export default kidpast
+
+{/* <input type="text" onChange={this.handleDeer} value={this.props.deer} placeholder="Favorite Reindeer"/> */}
+                    {/* <div className="logoutAdd1">
+                    <button onClick={()=>this.delete()}>Delete this Wish</button> */}
+                    {/* <br/> */}
+                    {/* <button onClick={this.sendToSanta}>Add to Santas List</button> */}
+                        {/* </div> */}
