@@ -11,13 +11,16 @@ class cardComponentBack extends Component {
     console.log("this is kid",kid)
         return (
             <div className="backofcard" key="back">
-                <button onClick={handleClick}>Flip Back</button>
                 <div>
                     {kid.address}
                     {kid.city}
                     {kid.state}
                 </div>
                 hellow world
+                <div>
+                <button onClick={handleClick}>Flip Back</button>
+
+                </div>
             </div>
         )
     }

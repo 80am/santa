@@ -7,6 +7,7 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const bcrypt = require('bcryptjs')
 const aws = require('aws-sdk');
+const path = require('path'); // Usually moved to the start of file
 
 
 
@@ -23,6 +24,9 @@ const {
 
 const app = express()
 
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 massive(MASSIVE_CONNECTION).then(db => {
     app.set('db', db)

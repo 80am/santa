@@ -81,7 +81,7 @@ mainbody {
   .middlelowerbox {
     /* border: 2px yellow solid; */
     /* background-color: #1D4431; */
-    width: 60vw;
+    width: 70vw;
     display: flex;
     height: 100%;
   }
@@ -106,8 +106,10 @@ mainbody {
 
   }
   .cardflip{
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 450px;
+    /* box-shadow: 5px 5px 18px gray; */
+
     /* margin: 5px; */
     /* display: flex;
     flex-direction: column;
@@ -131,6 +133,8 @@ mainbody {
     background-color: #ee1014;
     height: 280px;
     width: 410px;
+    box-shadow: 5px 5px 20px black;
+
     /* transform: rotateY(180deg) */
   }
   .kidboxborder {
@@ -232,7 +236,7 @@ mainbody {
   .rightlowerbox {
     /* border: 2px solid purple; */
     height: 100%;
-    width: 20vw;
+    width: 10vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -243,7 +247,7 @@ mainbody {
   .leftlowerbox {
     /* border: 2px solid purple; */
     height: 100%;
-    width: 20vw;
+    width: 10vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -334,6 +338,7 @@ mainbody {
     align-items: center;
     overflow: auto;
     overflow-x: hidden;
+    /* justify-content: center; */
   }
   
   .lowermiddleright {
