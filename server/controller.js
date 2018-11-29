@@ -54,9 +54,6 @@ module.exports={
                 req.session.user.id_of_user])
             .then((newitem)=>{res.status(200).send(newitem)})
         })
-    // } catch (error) {
-    //     console.log(error)
-    // }
     },
     getPastWish: (req,res) =>{
         console.log("this is the req.session.user",req.session.user.id_of_user)
@@ -64,5 +61,15 @@ module.exports={
         db.getpastWish([req.session.user.id_of_user])
         .then((newitem)=>{res.status(200).send(newitem)})
 
+    },
+    deleteWish: (req, res)=>{
+        console.log("req.params on delete",req.params)
+        const db=req.app.get('db')
+        db.deletePastWish([req.params.id])
+        .then((deleted)=>{
+            res.status(200).send(deleted)})
+            // db.deleteToy([req.params.toy_id])
+            // .then((deletedToy)=>{res.status(200).send(deletedToy)})
+        
     }
 }

@@ -8,6 +8,7 @@ import './dashboard.css';
 import Gcheck from '../images/green circle.jpg';
 import { Menu, Icon, Button } from 'antd';
 import ReactCardFlip from 'react-card-flip';
+import Flipper from '../Components/Flipper'
 
 
 
@@ -37,87 +38,58 @@ class Dashboard extends Component {
 
   render() {
     const SubMenu = Menu.SubMenu;
-    const nicekids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(nicekid => {
+    
+    const nicekids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(kid => {
       return (
 
-        // <ReactCardFlip isFlipped={this.state.isFlipped}>
-        // <div key="front">
-        
-        <div className="kidbox" key={nicekid.kid_id} >
-          <div className="kidboxborder">
-            <div className="kidboxlefthalf">
-              <div className="kidboxpicture1">
-                <img src={`${nicekid.kidpic}`} alt="" height="100%" width="75%" />
-              </div>
-              <div className="kidboxlowerhalf">
-              <div>
-                <a className="kidname">
-                  {`${nicekid.firstname}`.toUpperCase()}
-                  <br />
-                  {`${nicekid.lastname}`.toUpperCase()}
-                </a>
-                <a>{`${nicekid.toy_name}`.toUpperCase()}</a>
-              </div>
-            </div>
-            <div className="moreinfobutton">
-            <button onClick={this.handleClick}>More Info</button>
-                </div>
-             </div>
-            
-            <div className="kidboxrightinfo">
-              <div className="giftready">
-                <img src={`${nicekid.toy_picture}`} alt="" height="100%" width="100%" />
-              </div>
-              <div className="check">
-                Does Bernard Know?
-                <img src={Gcheck} alt="" height="25%" width="50%" />
-              </div>
-            </div>
-          </div>
-        </div>
-        // </div>
-        // <div className="kidbox" key = "back">
-        //   hellow world
-        // </div>
-        // </ReactCardFlip>
-
-      );
+        <Flipper kid={kid}/>
+      )
     });
-    const naughtykids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'naughty').map(naughtyKid => {
+    const naughtykids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'naughty').map(kid => {
       return (
-        <div className="kidbox" key={naughtyKid.kid_id}>
-          <div className="kidboxborder">
-            <div className="kidboxlefthalf">
-              <div className="kidboxpicture">
-                <img src={`${naughtyKid.kidpic}`} alt="" height="100%" width="75%" />
-              </div>
-              <div className="kidboxlowerhalf">
-              <div >
-                <a className="kidname">
-                  {`${naughtyKid.firstname}`.toUpperCase()}
-                  <br />
-                  {`${naughtyKid.lastname}`.toUpperCase()}
-                </a>
-                <a>{`${naughtyKid.toy_name}`.toUpperCase()}</a>
-              </div>
-              </div>
-              <div className="moreinfobutton">
-                <button>More Info</button>
-                </div>
-              </div>
+        <Flipper kid={kid}/>
+      )
+      //   <ReactCardFlip isFlipped={this.state.isFlipped}>
+      //   <div className="container" key="front">
+      //   <div className="kidbox" key={naughtyKid.kid_id}>
+      //     <div className="kidboxborder">
+      //       <div className="kidboxlefthalf">
+      //         <div className="kidboxpicture">
+      //           <img src={`${naughtyKid.kidpic}`} alt="" height="100%" width="75%" />
+      //         </div>
+      //         <div className="kidboxlowerhalf">
+      //         <div >
+      //           <a className="kidname">
+      //             {`${naughtyKid.firstname}`.toUpperCase()}
+      //             <br />
+      //             {`${naughtyKid.lastname}`.toUpperCase()}
+      //           </a>
+      //           <a>{`${naughtyKid.toy_name}`.toUpperCase()}</a>
+      //         </div>
+      //         </div>
+      //         <div className="moreinfobutton">
+      //           <button onClick={this.handleClick}>More Info</button>
+      //           </div>
+      //         </div>
             
-            <div className="kidboxrightinfo">
-              <div className="giftready">
-                <img src={`${naughtyKid.toy_picture}`} alt="" height="100%" width="100%" />
-              </div>
-              <div className="check">
-                Does Bernard Know?
-                <img src={Gcheck} alt="" height="25%" width="50%" />
-              </div>
-            </div>
-          </div>
-        </div>
-      );
+      //       <div className="kidboxrightinfo">
+      //         <div className="giftready">
+      //           <img src={`${naughtyKid.toy_picture}`} alt="" height="100%" width="100%" />
+      //         </div>
+      //         <div className="check">
+      //           Does Bernard Know?
+      //           <img src={Gcheck} alt="" height="25%" width="50%" />
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <div className="backofcard" key="back">
+      //   address
+      //   <button onClick={this.handleClick}>Flip Back</button>
+      //   </div>
+      //   </div>
+      //   </div>
+      //   </ReactCardFlip>
+      // );
     });
 
     return (
@@ -141,8 +113,12 @@ class Dashboard extends Component {
 
           <div className="leftlowerbox">
             <div className="loweruperleft">
+            <Link to="./">
             <Icon type="home" />
+            </Link>
+            <Link to="./dashboard">
             <Icon type="calendar" />
+            </Link>
             <Icon type="customer-service" />
             <Icon type="message" />
             </div>

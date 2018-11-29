@@ -358,7 +358,9 @@ mainapp{
     box-sizing: border-box;
     color: white;
     box-shadow: 5px 5px 18px black;
-    
+}
+.bottomright .logoutb{
+    width: 150px;
 }
 
 

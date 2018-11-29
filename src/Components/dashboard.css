@@ -71,7 +71,7 @@ mainbody {
     /*-----------------------------------------------------------------------*/
   }
   lowerbody {
-    border: 2px greenyellow solid;
+    /* border: 2px greenyellow solid; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,7 +99,39 @@ mainbody {
     align-items: center;
     background-color: #ee1014;
     box-shadow: 5px 5px 18px gray;
-    margin: 15px
+    margin: 15px;
+    /* transition: all 2s ease;
+    transform-style: preserve-3d;
+    position: relative; */
+
+  }
+  .cardflip{
+    height: 300px;
+    width: 300px;
+    /* margin: 5px; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+  }
+  /* .kidbox:hover{ */
+    /* transform: rotateY(180deg); */
+  /* } */
+  
+  /* .container{
+    perspective: 700
+  } */
+  /* .backofcard, .kidboxborder{ */
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+    /* backface-visibility: hidden; */
+  /* } */
+  .backofcard{
+    background-color: #ee1014;
+    height: 280px;
+    width: 410px;
+    /* transform: rotateY(180deg) */
   }
   .kidboxborder {
     border: 5px green dotted;
@@ -185,11 +217,12 @@ mainbody {
     background-color: white;
     /* border-style: none; */
     border-radius: 15px;
-    z-index: 5;
+    /* z-index: 5; */
     /* position: relative; */
     border: 5px green thick;
     margin: 5px;
   }
+  
   .kidname {
     font-family: kaushan script, sans-serif;
     font-size: 25px;

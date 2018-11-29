@@ -5,8 +5,6 @@
     /* display: flex; */
     display: flex;
     flex-direction: column;
-
-
 }
 .backbutton{
     height: 6vh;
@@ -37,6 +35,7 @@
 }
 .outmostdiv{
     display: flex;
+    margin: 20px
     /* flex-direction: column; */
 }
 .boxlid1{
@@ -62,14 +61,18 @@
     align-items: center;
     justify-content: center;
     /* box-shadow: 5px 5px 18px gray; */
-
-    
+}
+.boxlid1:hover{
+    background-image: none;
+    color: red;
+    background-color: black;
+    cursor: pointer;
 }
 .inputbigbox1{
     border: 10px green solid;
     display: flex;
-    height: 29vh;
-    width: 26vw;
+    height: 28vh;
+    width: 21vw;
     border-top: none;
     background-color: #EFE5D5;
     box-shadow: 5px 5px 18px black;
@@ -80,7 +83,7 @@
     
 }
 .inputboxtop1{
-    border: 2px green solid;
+    /* border: 2px green solid; */
     height: 100%;
     width: 100%;
     display: flex;
@@ -104,6 +107,9 @@
     /* align-items: center; */
     /* justify-content: space-around; */
     font-family: kaushan script, sans-serif, roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .inputboxright1 input{
     font-family: kaushan script, sans-serif, roboto;
@@ -147,7 +153,7 @@
     height: 100%;
     width: 50%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     /* flex-direction: column; */
     /* padding-bottom: 60px; */
@@ -176,7 +182,9 @@
 .boxleftdowndown1{
     /* border-top: 3px goldenrod solid; */
     height: 50%;
-    background-color: #EFE5D5
+    background-color: #EFE5D5;
+    font-size: 20px
+   
 }
 .inputboxright1 select{
     height: 7%;
@@ -220,11 +228,19 @@
     height: 32px;
     width: 27.5vw;
 }
+/* p{
+    border: 1px black solid;
+    display: flex;
+    width: 40px;
+} */
 .giftpic{
     border-bottom: 3px solid goldenrod;
     border-left: 3px solid goldenrod;
     height: 100%;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .giftNameFromSanta{
     height: 50%;
@@ -233,4 +249,7 @@
     justify-content: center;
     align-items: center;
     font-size: 30px;
+}
+.secondBox{
+    display: flex;
 }

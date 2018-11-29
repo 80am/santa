@@ -41,6 +41,7 @@ app.use(session({
 app.post('/api/sendToSanta/', ctrl.sendToSanta)
 app.get('/api/getallkids', ctrl.getallKids)
 app.get('/api/pastwish', ctrl.getPastWish)
+app.put('/api/kidpast/:id', ctrl.deleteWish)
 
 
 // const io = socket

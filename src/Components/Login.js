@@ -12,25 +12,31 @@ class Login extends Component {
             password: '',
             open: false,
             disabled: true,
-            showModal: "hide"
+            showLogin: false
         }
         this.handleModal = this.handleModal.bind(this)
+        this.handleShow = this.handleShow.bind(this)
         // this.handleCloseModal = this.handleCloseModal.bind(this)
     }
 
    
-    handleCloseModal = () => {
-        this.setState({
-            showModal:'hide'
-        })
-        console.log(this.state.showModal)
-    }
+    // handleCloseModal = () => {
+    //     this.setState({
+    //         showModal:'hide'
+    //     })
+    //     console.log(this.state.showModal)
+    // }
     handleModal() {
         this.setState({
             
             showModal: "show"
         })
         console.log(this.state.showModal)
+    }
+    handleShow(){
+        this.setState({
+            showLogin: (!this.state.showLogin)
+        })
     }
 
     render() {
@@ -65,18 +71,29 @@ class Login extends Component {
                         <br />
                         <div className="loginbut">
 
-                            <div>
-                                {/* <Link to="/dashboard"> */}
-                                    <button onClick={this.handleModal} className={`login ${this.state.showEdit}`}>ST KNICK</button>
-                                {/* </Link> */}
-                            </div>
+                            {/* <div>
+                            <button onClick={this.handleModal} className={`login ${this.state.showEdit}`}>ST KNICK</button>
+                            </div> */}
                             <div className="imakid">
-                                <Link to="/kidLogin">
-                                    <button>GET ON SANTAS LIST</button>
-                                </Link>
+                                {/* <Link to="/kidLogin"> */}
+                                    <button onClick={this.handleShow}>GET ON SANTAS LIST</button>
+                                {/* </Link> */}
                             </div>
                         </div>
                     </div>
+                    <div hidden={this.state.showLogin} className="outerkidlogin" >
+                <div className="kidLogin">
+                <h1>WELCOME!!<p>THE NORTH POLE HAS GOTTEN SO BUSY AROUND CHRISTMAS TIME. THE BEST WAY TO GET ON SANTAS LIST IS TO USE THIS APP. SIGN IN BELOW!</p></h1>
+                        <div>
+                        <input type="text" placeholder="Email"/>
+                        <input type="text" placeholder="Password"/>
+                        </div>
+                        <div>
+                        <button>Login</button>
+                        <button>Register</button>
+                        </div>
+                </div>
+                </div>
             </div>
         )
     }

@@ -17,40 +17,38 @@ class kidpast extends Component {
         super(props)
 
         this.state={
-            oldWish:[],
-            // age:"",
-            // toyPic:"",
-            // kidPic:"",
-            // n_or_n:'',
-            // wish:'',
+            oldWish:[]
+            
         }
     }
     componentDidMount(){
         axios.get('/api/pastwish').then((res)=>this.setState({oldWish: res.data}))
     }
 
+    handleDelete(id){
+        console.log(id)
+        axios.put(`/api/kidpast/${id}`).then(res => this.componentDidMount())
+    }
 
     render(){
         console.log(this.state.oldWish)
         const pastWish = this.state.oldWish.map(oneOldWish =>{
             return(
-                <div className="outmostdiv">
+                <div className="outmostdiv" key={oneOldWish.id}>
                 <div className="bodycenter1">
-                    <button className="boxlid1">Delete this Wish</button>
+                    <button className="boxlid1" onClick={()=>this.handleDelete(oneOldWish.id,oneOldWish.toy_id)}>Delete this Wish</button>
                     <div className="inputbigbox1">
                         <div className="inputboxtop1">
                             <div className="boxleftup1">
+                            <img src={oneOldWish.kidpic} width="100%" height="100%"alt=""/>
                             </div>
                            <div className="giftpic">
-                            gift from santa pic
+                            <img src={oneOldWish.toy_picture} width="100%" height="100%" alt=""/>
                             </div>                          
                         </div>
                         <div className="inputboxbottom1">
                         <div className="boxleftdowndown1">
-                                years old
-                            </div>
-                            <div className="giftNameFromSanta">
-                            Gift from Santa
+                               You were {oneOldWish.age} and wanting a {oneOldWish.wish}.  Your favorite deer was {`${oneOldWish.deer}`.toUpperCase()}
                             </div>
 
                             
@@ -58,7 +56,9 @@ class kidpast extends Component {
                     </div>
                     <div className="niceNaughty">
                     <div className="innerbox">
-                        Nice or Naughty
+                    {/* <div className="stretchnice"> */}
+                    {`${oneOldWish.n_or_n}`.toUpperCase()}
+                    {/* </div> */}
                     </div>
                     </div>
                     </div>
@@ -74,7 +74,9 @@ class kidpast extends Component {
                 <button>Go Back</button>
                 </Link>
                 </div>
-               
+                <div className="secondBox">
+               {pastWish}
+               </div>
             </div>
         )
     }

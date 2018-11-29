@@ -446,7 +446,7 @@ uploadFile1 = (file, signedRequest, toyurl) => {
                             <div></div>
                             <div></div>
                             <div></div>
-                            <button onClick={()=>this.logOut()}>Logout</button>
+                            <button onClick={()=>this.logOut()} className='logoutb'>Logout</button>
                             <Link to='/kidpast'>
                             <button>View Past Wishes</button>
                             </Link>
