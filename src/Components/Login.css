@@ -145,7 +145,7 @@ h1{
      z-index: 7
  }
 .outerkidlogin{
-    border: 1px purple solid;
+    /* border: 1px purple solid; */
     height: 40vh;
     width: 100vw;
     display: flex;
