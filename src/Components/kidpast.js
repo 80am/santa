@@ -5,7 +5,6 @@ import axios from "axios"
 import './kidpast.css'
 import { connect } from 'react-redux'
 import Modal from 'react-responsive-modal'
-// import { Upload, message, Button, Icon } from 'antd';
 import ImageUploader from 'react-images-upload'
 import { v4 as randomString } from 'uuid'
 import Dropzone from 'react-dropzone'
@@ -36,7 +35,7 @@ class kidpast extends Component {
             return(
                 <div className="outmostdiv" key={oneOldWish.id}>
                 <div className="bodycenter1">
-                    <button className="boxlid1" onClick={()=>this.handleDelete(oneOldWish.id,oneOldWish.toy_id)}>Delete this Wish</button>
+                    <button className="boxlid1" onClick={()=>this.handleDelete(oneOldWish.id)}>Delete this Wish</button>
                     <div className="inputbigbox1">
                         <div className="inputboxtop1">
                             <div className="boxleftup1">

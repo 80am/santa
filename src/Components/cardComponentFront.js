@@ -1,34 +1,45 @@
 import React, { Component } from 'react';
 import Gcheck from '../images/green circle.jpg';
-
+import axios from 'axios'
 
 class cardComponentFront extends Component {
-  constructor() {
-    super()
-    
+  constructor(props) {
+    super(props)
+    this.state={
+      showEdit: "show",
+      showSave: "hide",
+      kids: this.props.kid
+    }
+    this.handleBKnow=this.handleBKnow.bind(this)
   }
 
+  handleBKnow(id){
+    axios.put(`/api/changeBKnow/${id}`).then(res=>{this.setState({kids: res.data})})
+    
+  }
+  
 
   render() {
-    const {kid}=this.props
+    
     const {handleClick}=this.props
-    console.log("this is kid",kid)
+    console.log("this is kid",this.state.kids)
+    
     return (
           
-            <div className="kidbox" key={kid.kid_id} >
+            <div className="kidbox" key={this.state.kids.id} >
               <div className="kidboxborder">
                 <div className="kidboxlefthalf">
                   <div className="kidboxpicture1">
-                    <img src={`${kid.kidpic}`} alt="" height="100%" width="75%" />
+                    <img src={`${this.state.kids.kidpic}`} alt="" height="100%" width="75%" />
                   </div>
                   <div className="kidboxlowerhalf">
                     <div>
                       <a className="kidname">
-                        {`${kid.firstname}`.toUpperCase()}
+                        {`${this.state.kids.firstname}`.toUpperCase()}
                         <br />
-                        {`${kid.lastname}`.toUpperCase()}
+                        {`${this.state.kids.lastname}`.toUpperCase()}
                       </a>
-                      <a>{`${kid.toy_name}`.toUpperCase()}</a>
+                      <a>{`${this.state.kids.toy_name}`.toUpperCase()}</a>
                     </div>
                   </div>
                   <div className="moreinfobutton">
@@ -38,11 +49,15 @@ class cardComponentFront extends Component {
 
                 <div className="kidboxrightinfo">
                   <div className="giftready">
-                    <img src={`${kid.toy_picture}`} alt="" height="100%" width="100%" />
+                    <img src={`${this.state.kids.toy_picture}`} alt="" height="100%" width="100%" />
                   </div>
                   <div className="check">
-                    Does Bernard Know?
-                <img src={Gcheck} alt="" height="25%" width="50%" />
+                    <h9>Does Bernard Know?</h9>
+                    {console.log(this.state.kids.doesbknow)}
+                    {this.state.kids.doesbknow === 'no' || this.state.kids.doesbknow === null ?
+                    <button className="redcheck" onClick={()=>this.handleBKnow(this.state.kids.id)}></button>:
+                    <button  className="greencheck"></button>
+                    }
                   </div>
                 </div>
               </div>

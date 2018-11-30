@@ -116,6 +116,24 @@ mainbody {
     justify-content: center;
     align-items: center; */
   }
+  .greencheck{
+    height: 40%;
+    width: 40%;
+    background-image: url('../images/green\ circle.jpg');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;  
+    border-style: none;
+  }
+  .redcheck{
+    height: 40%;
+    width: 40%;
+    background-image: url('../images/red\ circle.jpg');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;  
+    border-style: none;
+  }
   /* .kidbox:hover{ */
     /* transform: rotateY(180deg); */
   /* } */
@@ -185,7 +203,8 @@ mainbody {
     flex-direction: column;
   }
   .check {
-    height: 50%;
+        /* border: 1px black solid; */
+    height: 55%;
     width: 100%;
     margin-bottom: 5px;
     display: flex;
@@ -193,9 +212,9 @@ mainbody {
     align-items: center;
     flex-direction: column;
   }
-  .check img {
+  /* .check img {
     margin: 5px;
-  }
+  } */
   .kidboxlowerhalf {
     /* border: 2px goldenrod solid; */
     /* border-top: 2px goldenrod solid; */

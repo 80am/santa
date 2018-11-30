@@ -31,17 +31,14 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/getallkids').then(res => {
-      this.setState({ kids: res.data });
+    axios.get('/api/getallkids').then(res => {this.setState({ kids: res.data })
     });
   }
 
   render() {
     const SubMenu = Menu.SubMenu;
-    
     const nicekids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(kid => {
       return (
-
         <Flipper kid={kid}/>
       )
     });
@@ -49,47 +46,6 @@ class Dashboard extends Component {
       return (
         <Flipper kid={kid}/>
       )
-      //   <ReactCardFlip isFlipped={this.state.isFlipped}>
-      //   <div className="container" key="front">
-      //   <div className="kidbox" key={naughtyKid.kid_id}>
-      //     <div className="kidboxborder">
-      //       <div className="kidboxlefthalf">
-      //         <div className="kidboxpicture">
-      //           <img src={`${naughtyKid.kidpic}`} alt="" height="100%" width="75%" />
-      //         </div>
-      //         <div className="kidboxlowerhalf">
-      //         <div >
-      //           <a className="kidname">
-      //             {`${naughtyKid.firstname}`.toUpperCase()}
-      //             <br />
-      //             {`${naughtyKid.lastname}`.toUpperCase()}
-      //           </a>
-      //           <a>{`${naughtyKid.toy_name}`.toUpperCase()}</a>
-      //         </div>
-      //         </div>
-      //         <div className="moreinfobutton">
-      //           <button onClick={this.handleClick}>More Info</button>
-      //           </div>
-      //         </div>
-            
-      //       <div className="kidboxrightinfo">
-      //         <div className="giftready">
-      //           <img src={`${naughtyKid.toy_picture}`} alt="" height="100%" width="100%" />
-      //         </div>
-      //         <div className="check">
-      //           Does Bernard Know?
-      //           <img src={Gcheck} alt="" height="25%" width="50%" />
-      //         </div>
-      //       </div>
-      //     </div>
-      //     <div className="backofcard" key="back">
-      //   address
-      //   <button onClick={this.handleClick}>Flip Back</button>
-      //   </div>
-      //   </div>
-      //   </div>
-      //   </ReactCardFlip>
-      // );
     });
 
     return (

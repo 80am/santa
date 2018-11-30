@@ -71,5 +71,13 @@ module.exports={
             // db.deleteToy([req.params.toy_id])
             // .then((deletedToy)=>{res.status(200).send(deletedToy)})
         
+    },
+    changeBKnow: (req, res)=>{
+        console.log('this is the user ', req.params)
+        const db=req.app.get('db')
+        db.changeBKnow([req.params.id])
+        .then((newBknow)=>{
+            res.status(200).send(newBknow)
+        })
     }
 }

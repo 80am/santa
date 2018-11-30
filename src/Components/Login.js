@@ -50,36 +50,10 @@ class Login extends Component {
         axios.get(`/auth/logout`)
     }
 
-    // handleCloseModal = () => {
-    //     this.setState({
-    //         showModal:'hide'
-    //     })
-    //     console.log(this.state.showModal)
-    // }
-    // handleModal() {
-    //     this.setState({
-
-    //         showModal: "show"
-    //     })
-    //     console.log(this.state.showModal)
-    // }
-    // handleShow(){
-    //     this.setState({
-    //         hiddenLogin: (!this.state.hiddenLogin)
-    //     })
-    // }
-    // myFunction() {
-    //     var x = document.getElementById("outerkidlogin");
-    //     if (x.display === "none") {
-    //         x.display = "block";
-    //     } else {
-    //         x.display = "none";
-    //     }
-    // }
+   
 
     render() {
-        // let loginkid = (this.state.hiddenLogin ? {} : loginArea)
-        // var modal = !this.state.open ===false ?  :
+       
         return (
             <div className="bigbox">
                 <div className="everything">
@@ -101,14 +75,11 @@ class Login extends Component {
                     <br />
                     <div className="loginbut">
                         <div className="imakid">
-                            {/* <Link to="/kidLogin"> */}
                             <button onClick={this.handleShowOrHide}>GET ON SANTAS LIST</button>
-                            {/* </Link> */}
                         </div>
                     </div>
                 </div>
                 <div className="outerkidlogin" >
-                   
                    {this.state.hiddenLogin &&  <div className="kidLogin">
                         <h1>WELCOME!!<p>THE NORTH POLE HAS GOTTEN SO BUSY AROUND CHRISTMAS TIME. THE BEST WAY TO GET ON SANTAS LIST IS TO USE THIS APP. SIGN IN BELOW!</p></h1>
                         <div>
@@ -119,7 +90,6 @@ class Login extends Component {
                             <button onClick={() => this.signup()}>Register</button>
                         </div>
                     </div>}
-                    {/* {loginkid} */}
                 </div>
             </div>
         )
