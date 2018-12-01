@@ -1,13 +1,14 @@
-module.exports={
+
+module.exports = {
 
     getallKids: (req, res) => {
         const db = req.app.get('db')
         console.log('we are in the controller')
         db.getKids()
-        .then((allKids)=>{
-            console.log("made it out of the DB with allkids", allKids)
-            res.status(200).send(allKids)
-        })
+            .then((allKids) => {
+                console.log("made it out of the DB with allkids", allKids)
+                res.status(200).send(allKids)
+            })
     },
     // uLogin: (req, res) => {
     //     console.log("Login", req.body.userName, req.body.passWord)
@@ -27,18 +28,19 @@ module.exports={
     //             }
 
     //          })
-        
-    // },
-    sendToSanta: (req,res) => {
-    // try{
-        const db=req.app.get('db')
-        console.log('This req.body',req.body)
-        db.setWish([req.body.wish, req.body.toyPic])
-        .then( (newToy)=>{
 
-            console.log("this is the newToy", newToy[0].toy_id)
-            console.log("this is session id",req.session.user)
-            db.setKid([req.body.firstname,
+    // },
+    sendToSanta: (req, res) => {
+        // try{
+        const db = req.app.get('db')
+        console.log('This req.body', req.body)
+        db.setWish([req.body.wish, req.body.toyPic])
+            .then((newToy) => {
+
+                // console.log("this is the newToy", newToy[0].toy_id)
+                // console.log("this is session id", req.session.user)
+                // console.log("this is req.body.lat", req.body.lat)
+                db.setKid([req.body.firstname,
                 req.body.lastname,
                 req.body.address,
                 req.body.city,
@@ -51,33 +53,42 @@ module.exports={
                 req.body.deer,
                 req.body.kidPic,
                 newToy[0].toy_id,
-                req.session.user.id_of_user])
-            .then((newitem)=>{res.status(200).send(newitem)})
-        })
+                req.session.user.id_of_user,
+                req.body.lat,
+                req.body.lng])
+                    .then((newitem) => { res.status(200).send(newitem) })
+            })
     },
-    getPastWish: (req,res) =>{
-        console.log("this is the req.session.user",req.session.user.id_of_user)
-        const db=req.app.get('db')
+    getPastWish: (req, res) => {
+        console.log("this is the req.session.user", req.session.user.id_of_user)
+        const db = req.app.get('db')
         db.getpastWish([req.session.user.id_of_user])
-        .then((newitem)=>{res.status(200).send(newitem)})
+            .then((newitem) => { res.status(200).send(newitem) })
 
     },
-    deleteWish: (req, res)=>{
-        console.log("req.params on delete",req.params)
-        const db=req.app.get('db')
+    deleteWish: (req, res) => {
+        console.log("req.params on delete", req.params)
+        const db = req.app.get('db')
         db.deletePastWish([req.params.id])
-        .then((deleted)=>{
-            res.status(200).send(deleted)})
-            // db.deleteToy([req.params.toy_id])
-            // .then((deletedToy)=>{res.status(200).send(deletedToy)})
-        
+            .then((deleted) => {
+                res.status(200).send(deleted)
+            })
+        // db.deleteToy([req.params.toy_id])
+        // .then((deletedToy)=>{res.status(200).send(deletedToy)})
+
     },
-    changeBKnow: (req, res)=>{
+    changeBKnow: (req, res) => {
         console.log('this is the user ', req.params)
-        const db=req.app.get('db')
+        const db = req.app.get('db')
         db.changeBKnow([req.params.id])
-        .then((newBknow)=>{
-            res.status(200).send(newBknow)
-        })
-    }
+            .then((newBknow) => {
+                res.status(200).send(newBknow)
+            })
+    },
+//     maps: (req, res) => {
+//         axios.get()
+//         }.then((respon) => {
+//         console.log(respon.data)
+//         res.status(200).send(respon.data)
+// })
 }

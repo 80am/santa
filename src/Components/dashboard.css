@@ -232,6 +232,7 @@ mainbody {
     justify-content: flex-end;
     align-items: flex-end;
     
+    
   }
   .moreinfobutton button{
     height: 4vh;
@@ -244,6 +245,20 @@ mainbody {
     /* position: relative; */
     border: 5px green thick;
     margin: 5px;
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 15px;
+    border-radius: 30px;
+    /* height: 50px; */
+    /* width: 320px; */
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 5px 5px 18px black;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
   }
   
   .kidname {
@@ -442,4 +457,20 @@ mainbody {
   .text1 {
     font-family: kaushan script, sans-serif;
     font-size: 50px;
+  }
+  .flipbackbutton{
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 30px;
+    border-radius: 30px;
+    height: 49px;
+    width: 150px;
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 5px 5px 18px black;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
   }

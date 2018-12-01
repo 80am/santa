@@ -14,7 +14,7 @@ class cardComponentFront extends Component {
   }
 
   handleBKnow(id){
-    axios.put(`/api/changeBKnow/${id}`).then(res=>{this.setState({kids: res.data})})
+    axios.put(`/api/changeBKnow/${id}`).then(res=>{console.log("this is new res",res)})
     
   }
   
@@ -22,7 +22,7 @@ class cardComponentFront extends Component {
   render() {
     
     const {handleClick}=this.props
-    console.log("this is kid",this.state.kids)
+    // console.log("this is kid",this.state.kids)
     
     return (
           
@@ -53,7 +53,7 @@ class cardComponentFront extends Component {
                   </div>
                   <div className="check">
                     <h9>Does Bernard Know?</h9>
-                    {console.log(this.state.kids.doesbknow)}
+                    {/* {console.log(this.state.kids.doesbknow)} */}
                     {this.state.kids.doesbknow === 'no' || this.state.kids.doesbknow === null ?
                     <button className="redcheck" onClick={()=>this.handleBKnow(this.state.kids.id)}></button>:
                     <button  className="greencheck"></button>

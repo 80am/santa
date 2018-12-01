@@ -7,6 +7,7 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const bcrypt = require('bcryptjs')
 const aws = require('aws-sdk');
+const axios = require('axios')
 
 
 
@@ -19,7 +20,8 @@ const {
     SESSION_SECRET,
     CONNECTION_STRING,
     AWS_ACCESS_KEY_ID,
-    AWS_SECRET_ACCESS_KEY
+    AWS_SECRET_ACCESS_KEY,
+    REACT_APP_GMAPSKEY
 } = process.env
 
 const app = express()
@@ -40,11 +42,32 @@ app.use(session({
     saveUninitialized: true
 }))
 
-app.post('/api/sendToSanta/', ctrl.sendToSanta)
+const geo = (req, res, next)=> {
+    console.log("this is req body body", req.body)
+    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${req.body.address},${req.body.city},${req.body.state}&key=${REACT_APP_GMAPSKEY}`
+    ).then((res)=>{
+        // console.log("in the block middleware res.data",res.data.results[0].geometry.location.lat)
+        req.body.lat = res.data.results[0].geometry.location.lat
+        req.body.lng = res.data.results[0].geometry.location.lng
+        console.log("this is lat",req.body.lat)
+        console.log("this is lat",req.body.lng)
+        if(req.body.lat){
+            next();
+    }
+            }   
+
+        )
+
+}
+
+app.post('/api/sendToSanta/', geo, ctrl.sendToSanta)
 app.get('/api/getallkids', ctrl.getallKids)
 app.get('/api/pastwish', ctrl.getPastWish)
 app.put('/api/kidpast/:id', ctrl.deleteWish)
 app.put('/api/changeBKnow/:id', ctrl.changeBKnow)
+app.get('/api/googlemaps/:city', (req,res)=>{
+    
+})
 
 app.listen(SERVER_PORT, () =>
     console.log(`Mr Smith lives in port ${SERVER_PORT}`))

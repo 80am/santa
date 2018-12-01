@@ -49,7 +49,7 @@ class Login extends Component {
     async logOut() {
         axios.get(`/auth/logout`)
     }
-
+    // AIzaSyCmmy0ekB83JK8KdqA9XFDEpuBzRAtkZSQ
    
 
     render() {

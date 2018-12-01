@@ -13,7 +13,9 @@ insert into boygirl(
     deer,
     kidpic,
     toy_id,
-    doesbknow
+    doesbknow,
+    lat,
+    lng
 )values(
     $14,
     $1,
@@ -29,7 +31,9 @@ insert into boygirl(
     $11,
     $12,
     $13,
-    'no'
+    'no',
+    $15,
+    $16
     
 )
 returning*
