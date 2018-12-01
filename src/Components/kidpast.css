@@ -5,6 +5,9 @@
     /* display: flex; */
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+    flex-wrap: wrap
 }
 .backbutton{
     height: 6vh;
@@ -35,7 +38,8 @@
 }
 .outmostdiv{
     display: flex;
-    margin: 20px
+    margin: 20px;
+    height: 50%;
     /* flex-direction: column; */
 }
 .boxlid1{
@@ -197,8 +201,6 @@
     border-style: none;
     color: red;
     padding-left: 10%;
- 
-
 }
 .inputboxright1 span{
     font-family: kaushan script, sans-serif, roboto;
@@ -252,4 +254,7 @@
 }
 .secondBox{
     display: flex;
+    height: 90%;
+    width: 100%;
+    flex-wrap: wrap
 }
