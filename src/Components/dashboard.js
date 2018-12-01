@@ -78,7 +78,7 @@ class Dashboard extends Component {
             <Icon type="customer-service" />
             <Icon type="message" />
             </div>
-            <div className="lowerlowerleft">
+            <div className="lowerlowerrightbox">
             {/* ------------------------------------------------------  */}
             
               <div className="stripecircle">
