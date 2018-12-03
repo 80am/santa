@@ -47,7 +47,7 @@ class kidpast extends Component {
                         </div>
                         <div className="inputboxbottom1">
                         <div className="boxleftdowndown1">
-                               You were {oneOldWish.age} and wanting a {oneOldWish.wish.toUpperCase()}  Your favorite deer was {`${oneOldWish.deer}`.toUpperCase()}
+                               You were {oneOldWish.age} and wanting a {`${oneOldWish.wish}`.toUpperCase()}  Your favorite deer was {`${oneOldWish.deer}`.toUpperCase()}
                             </div>
 
                             
