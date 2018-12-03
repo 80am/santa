@@ -127,6 +127,7 @@ mainapp{
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
     /* padding-bottom: 60px; */
 }
 .kidpic{
@@ -146,6 +147,7 @@ mainapp{
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 .inputboxright select{
     height: 7%;
@@ -361,6 +363,7 @@ mainapp{
 }
 .bottomright .logoutb{
     width: 150px;
+    height: 50px;
 }
 
 

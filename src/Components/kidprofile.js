@@ -40,6 +40,7 @@ class Kidprofile extends Component {
             isUploading1: false,
             url: '',
             toyurl: '',
+            noReason:true
           
         }
         
@@ -285,6 +286,7 @@ uploadFile1 = (file, signedRequest, toyurl) => {
       .then((res) => {this.props.history.push('/')}
 
       )}
+     
 
     render() {
         const { open } = this.state;
@@ -325,7 +327,7 @@ uploadFile1 = (file, signedRequest, toyurl) => {
                             {isUploading ? <GridLoader /> : <p>Your Picture</p>}
                         </Dropzone>
                         <br/>
-                        <img src={url} alt="" width="100%"/>                               
+                        <img src={url} alt="" width="100%" height="100%"/>                               
                                
                                 
                             </div>
@@ -353,7 +355,7 @@ uploadFile1 = (file, signedRequest, toyurl) => {
                         {isUploading1 ? <GridLoader /> : <p>Toy Picture</p>}
                         </Dropzone>
                         <br/>
-                        <img src={toyurl} alt="" width="100%"/>                                
+                        <img src={toyurl} alt="" width="100%" height="100%"/>                                
                             </div>
                         </div>
 
@@ -366,11 +368,11 @@ uploadFile1 = (file, signedRequest, toyurl) => {
                             <input type="text" onChange={this.handleAddress}  placeholder="Street Address" />
                             <input type="text" onChange={this.handleCity} placeholder="City" />
                             </div>
-                            <div className="statezipcountry">
+                            {/* <div className="statezipcountry"> */}
                             <input type="text" onChange={this.handleState} placeholder="State" />
-                            <input type="text" onChange={this.handleZip}  placeholder="Zip" />
-                            <input type="text" onChange={this.handleCountry}  placeholder="Country" />
-                            </div>
+                            {/* <input type="text" onChange={this.handleZip}  placeholder="Zip" /> */}
+                            {/* <input type="text" onChange={this.handleCountry}  placeholder="Country" /> */}
+                            {/* </div> */}
                             <input type="text" onChange={this.handleWish}  placeholder="Gift from Santa?" />
                             <input type="text" onChange={this.handleAge}  placeholder="Age" />
                             <input type="text" onChange={this.handleDeeds}  placeholder="0-100 Deeds?" />
@@ -407,7 +409,7 @@ uploadFile1 = (file, signedRequest, toyurl) => {
                         <h2>THANK YOU!!</h2> 
                             You are on Santas list. He is curently checking it twice
                         
-                        <button onClick={this.componentDidMount()}>Check Out Santas World</button>
+                        <button ></button>
                         
                         {/* <Link to="/"> */}
                         
@@ -465,8 +467,8 @@ function mapStateToProps(state) {
         firstname: state.kid.firstname,
         lastname: state.kid.lastname,
         address: state.kid.address,
-        city: state.kid.city,
-        state: state.kid.state,
+        // city: state.kid.city,
+        // state: state.kid.state,
         zip: state.kid.zip,
         country: state.kid.country,
         age: state.kid.age,
@@ -486,8 +488,8 @@ const mapDispatchToProps = (dispatch) => ({
     addaddress: value => dispatch({ type: "ADD_ADDRESS", value: value }),
     addcity: value => dispatch({ type: "ADD_CITY", value: value }),
     addstate: value => dispatch({ type: "ADD_STATE", value: value }),
-    addzip: value => dispatch({ type: "ADD_ZIP", value: value }),
-    addcountry: value => dispatch({ type: "ADD_COUNTRY", value: value }),
+    // addzip: value => dispatch({ type: "ADD_ZIP", value: value }),
+    // addcountry: value => dispatch({ type: "ADD_COUNTRY", value: value }),
     addwish: value => dispatch({ type: "ADD_WISH", value: value }),
     addage: value => dispatch({ type: "ADD_AGE", value: value }),
     addn_or_n: value => dispatch({ type: "ADD_N_OR_N", value: value }),

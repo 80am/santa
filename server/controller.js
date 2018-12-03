@@ -40,22 +40,22 @@ module.exports = {
                 // console.log("this is the newToy", newToy[0].toy_id)
                 // console.log("this is session id", req.session.user)
                 // console.log("this is req.body.lat", req.body.lat)
-                db.setKid([req.body.firstname,
+                db.setKid([
+                req.session.user.id_of_user,
+                req.body.firstname,
                 req.body.lastname,
                 req.body.address,
                 req.body.city,
                 req.body.state,
-                req.body.zip,
-                req.body.country,
                 req.body.wish,
                 req.body.age,
                 req.body.n_or_n,
                 req.body.deer,
                 req.body.kidPic,
                 newToy[0].toy_id,
-                req.session.user.id_of_user,
                 req.body.lat,
-                req.body.lng])
+                req.body.lng
+            ])
                     .then((newitem) => { res.status(200).send(newitem) })
             })
     },
@@ -84,11 +84,5 @@ module.exports = {
             .then((newBknow) => {
                 res.status(200).send(newBknow)
             })
-    },
-//     maps: (req, res) => {
-//         axios.get()
-//         }.then((respon) => {
-//         console.log(respon.data)
-//         res.status(200).send(respon.data)
-// })
+    }
 }

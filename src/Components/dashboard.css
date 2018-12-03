@@ -19,6 +19,7 @@ mainbody {
     border-bottom: #213921 3px solid;
     padding-right: 20px;
     z-index: 10;
+    justify-content: space-between
     
     
   }
@@ -56,14 +57,20 @@ mainbody {
   .reathimage{
       /* border: 1px cyan solid; */
       height: 100%;
-      width: 40px;
-      padding-left: 163px;
+      width: 8%;
+      /* padding-left: 163px; */
+      display: flex;
+      
+  }
+  .flippedtree{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
   }
   .candycane {
     border: black 2px solid;
     height: 100%;
     width: 2vw;
-    background-image: linear-gradient(78deg, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2);
+    background-image: linear-gradient(72deg, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2,#C7342A,#DDDCE2);
     /* box-shadow: 5px 10px 18px gray; */
     /* box-shadow: 18px 10px 15px black; */
     /* position: relative; */
@@ -312,7 +319,15 @@ mainbody {
     align-items: flex-end;
     /* flex-direction: column; */
   }
-  
+  .divdiv{
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 20.2%;
+  }
   .stripecircle {
     border: 2px solid black;
     /* border-right: none; */
@@ -321,9 +336,9 @@ mainbody {
     width: 13vw;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-image: linear-gradient(76deg, #C7342A,#C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2);
+    background-image: linear-gradient(72deg, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2,#C7342A, #DDDCE2, #DDDCE2);
     margin: 0 -39% 0 0;
-    z-index: 9;
+    /* z-index: 9; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -332,14 +347,15 @@ mainbody {
   }
   .blankwhitebox {
     /* border: 1px solid black; */
-    height: 36%;
-    width: 39%;
+    height: 13%;
+    width: 19.7%;
     /* background: black; */
     /* background-color: #efe5d5; */
     background-color: white;
     /* position: relative; */
     z-index: 2;
     margin: 0 -38px 0 0;
+    position: fixed;
   }
   .fontwhitebox {
     border: 2px black solid;
@@ -412,7 +428,7 @@ mainbody {
     width: 13vw;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-image: linear-gradient(78deg, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A,#DDDCE2);
+    background-image: linear-gradient(72deg, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A,#DDDCE2);
     z-index: 9;
     display: flex;
     justify-content: flex-start;

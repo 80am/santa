@@ -5,8 +5,6 @@ insert into boygirl(
     address,
     city,
     state,
-    zip,
-    country,
     wish,
     age,
     n_or_n,
@@ -15,9 +13,9 @@ insert into boygirl(
     toy_id,
     doesbknow,
     lat,
-    lng
+    lng,
+    year
 )values(
-    $14,
     $1,
     $2,
     $3,
@@ -30,10 +28,10 @@ insert into boygirl(
     $10,
     $11,
     $12,
-    $13,
     'no',
-    $15,
-    $16
+    $13,
+    $14,
+    2018
     
 )
 returning*

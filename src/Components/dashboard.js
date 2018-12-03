@@ -20,37 +20,54 @@ class Dashboard extends Component {
       kids: [],
       collapsed: false,
       isFlipped: false,
-
+      filterSelect:"",
+      // bKnow:"",
     };
     this.handleClick = this.handleClick.bind(this);
+    this.filterSelect = this.filterSelect.bind(this);
+    this.handleBKnow = this.handleBKnow.bind(this);
 
+  }
+  componentDidMount() {
+        axios.get('/api/getallkids').then(res => {this.setState({ kids: res.data })
+        });
+      }
+  handleBKnow(id){
+    axios.put(`/api/changeBKnow/${id}`).then((res)=>this.setState({kids: res.data}).then(()=>{this.componentDidMount()}))
+    
+  }
+  filterSelect(e) {
+    console.log(this.state.filterSelect)
+    this.setState({
+        filterSelect: e.target.value
+    })
   }
   handleClick(e) {
     e.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
   }
 
-  componentDidMount() {
-    axios.get('/api/getallkids').then(res => {this.setState({ kids: res.data })
+
+  render() {
+    if (this.state.kids !=[]) {
+      console.log(this.state.kids)
+    var alphakids = this.state.kids.sort((a,b) => (a.firstname.toLowerCase() > b.firstname.toLowerCase()) ? 1 : ((b.firstname.toLowerCase() > a.firstname.toLowerCase()) ? -1 : 0));
+    console.log("this is alphakids",alphakids)
+    var nicekids = alphakids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(kid => {
+      return (
+        <Flipper kid={kid} bKnow={this.handleBKnow}/>
+      )
+    });
+    var naughtykids = alphakids.filter(naughtyKid => naughtyKid.n_or_n == 'naughty').map(kid => {
+      return (
+        <Flipper kid={kid} bKnow={this.handleBKnow}/>
+      )
     });
   }
 
-  render() {
-    const SubMenu = Menu.SubMenu;
-    const nicekids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(kid => {
-      return (
-        <Flipper kid={kid}/>
-      )
-    });
-    const naughtykids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'naughty').map(kid => {
-      return (
-        <Flipper kid={kid}/>
-      )
-    });
-
     return (
       <div className="mainbody">
-        {/* <div className="drop10" /> */}
+        {console.log("the body ran")}
         <header>
           <div className="headerleft">
             <h1>S</h1>.wiftly <h1>A</h1>.llocating <h1>N</h1>.ew <h1>T</h1>.hings to <h1>A</h1>.ll
@@ -61,11 +78,10 @@ class Dashboard extends Component {
           </div>
           <div className="reathimage">
           <img src={Tree} alt="" height="100%" with="100%" />
+          <img className="flippedtree"src={Tree} alt="" height="100%" with="100%" />
           </div>
         </header>
-        {/* <div className="drop10"></div> */}
         <div className="lowerbody">
-          {/* <div class="parallax"></div> */}
 
           <div className="leftlowerbox">
             <div className="loweruperleft">
@@ -80,9 +96,10 @@ class Dashboard extends Component {
             </div>
             <div className="lowerlowerrightbox">
             {/* ------------------------------------------------------  */}
-            
+              <div className="divdiv">
               <div className="stripecircle">
                 <div className="fontwhitebox" />
+              </div>
               </div>
               <div className="blankwhitebox" />
 
@@ -107,13 +124,10 @@ class Dashboard extends Component {
             <div className="uperlowerrightbox">
               <br />
               Filter your Search:
-              <select>
-                <option name="" id="" />
-                <option name="" id="">Name</option>
-                <option name="" id="">City</option>
-                <option name="" id="">Country</option>
-                <option name="" id="">Gift</option>
-                <option name="" id="">Age</option>
+              <select onChange={this.filterSelect} className="selectbox">
+                  <option value=""></option>
+                  <option value="firstname">First Name</option>
+                  <option value="lastname">Last Name</option>
               </select>
               <br />
               Refine your Search:

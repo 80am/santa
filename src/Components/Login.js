@@ -57,12 +57,14 @@ class Login extends Component {
         return (
             <div className="bigbox">
                 <div className="everything">
-                    <div className="santa">
+                    <div>
+                    <div className="santa1">
                         <Link to="/dashboard">
                             <h1>S</h1>
                         </Link>
                         .wiftly <h1>A</h1>.llocating <h1>N</h1>.ew <h1>T</h1>.hings to <h1>A</h1>.ll
-                </div>
+                    </div>
+                    </div>
                     <div className="city">
                         <Particles style={{
                             width: '100%',
@@ -82,10 +84,11 @@ class Login extends Component {
                 <div className="outerkidlogin" >
                    {this.state.hiddenLogin &&  <div className="kidLogin">
                         <h1>WELCOME!!<p>THE NORTH POLE HAS GOTTEN SO BUSY AROUND CHRISTMAS TIME. THE BEST WAY TO GET ON SANTAS LIST IS TO USE THIS APP. SIGN IN BELOW!</p></h1>
-                        <div>
+                        <div >
                             <input type="text" onChange={(e) => this.updateEmail(e)} placeholder="Email" />
-                            <input type="text" placeholder="Password" onChange={(e) => this.updatePassword(e)} />                        </div>
-                        <div>
+                            <input type="password" placeholder="Password" onChange={(e) => this.updatePassword(e)} />                        
+                        </div>
+                        <div className="KidLoginarea">
                             <button onClick={() => this.login()}>Login</button>
                             <button onClick={() => this.signup()}>Register</button>
                         </div>

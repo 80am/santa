@@ -51,7 +51,11 @@ create table boygirl(
     deeds,
     deer,
     kidpic,
-    toy_id
+    toy_id,
+    doesbknow,
+    lat,
+    lng,
+    year
 )values
     (1,'ant','man', '326 sherman hare rd', 'grantsville', 'maryland', 21536, 'united states', 'radio flyer', 38, 'nice', 48, 'rudolph', 'https://terrigen-cdn-dev.marvel.com/content/prod/1x/010ant_com_crd_01.jpg',1),
     (4,'tony','stark', '162 derrickson st', 'fort benning', 'georgia', 31905, 'united states', 'world peace', 40, 'naughty', 20, 'comet', 'https://terrigen-cdn-dev.marvel.com/content/prod/1x/002irm_ons_crd_02.jpg',2),

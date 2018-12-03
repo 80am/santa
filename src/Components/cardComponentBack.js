@@ -60,6 +60,7 @@ class cardComponentBack extends Component {
                                 lng={lngNum}
                                 // text={`${kid.firstname}`+ ` lives here`}
                                 font-color="#ffff"
+                                
                             />
                         </GoogleMapReact>
                     </div>

@@ -65,9 +65,9 @@ app.get('/api/getallkids', ctrl.getallKids)
 app.get('/api/pastwish', ctrl.getPastWish)
 app.put('/api/kidpast/:id', ctrl.deleteWish)
 app.put('/api/changeBKnow/:id', ctrl.changeBKnow)
-app.get('/api/googlemaps/:city', (req,res)=>{
+// app.get('/api/googlemaps/:city', (req,res)=>{
     
-})
+// })
 
 app.listen(SERVER_PORT, () =>
     console.log(`Mr Smith lives in port ${SERVER_PORT}`))

@@ -90,7 +90,7 @@ bigbox{
     box-sizing: border-box;
 
 }
-.santa{
+.santa1{
     /* border: 1px black solid; */
     display: flex;
     justify-content: center;
@@ -110,7 +110,7 @@ h1{
     cursor: none;
 }
 
- .behindmodal{
+ /* .behindmodal{
     background-color: black;
     opacity: .1;
     display: flex;
@@ -127,7 +127,7 @@ h1{
     background-color: white;
     z-index: 100001;
     position: fixed;
-}
+} */
  .show {
     display: block;
   }
@@ -135,7 +135,7 @@ h1{
     display: none;
   }
  .kidLogin{
-     border: 1px black solid;
+     /* border: 1px black solid; */
      height: 90%;
      width: 50vw;
      display: flex;
@@ -153,4 +153,36 @@ h1{
 }
 .kidLogin button,input{
     margin: 5px;
+}
+.kidLogin input{
+    border: 5px green dashed;
+    height: 41px;
+    width: 45%;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 15px;
+
+}
+.kidLogin button{
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 5px 5px 18px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 30px;
+    border-radius: 30px;
+    height: 50px;
+    width: 320px;
+}
+.KidLoginarea{
+    display: flex;
+    /* border: 1px black solid; */
+    /* height: 25%;
+    width: 25%; */
+
 }
