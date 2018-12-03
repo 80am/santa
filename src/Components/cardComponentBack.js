@@ -42,6 +42,7 @@ class cardComponentBack extends Component {
             console.log(lngNum === -122.491572 )
             
         }
+        var spot = <div style="color:white;font-size:30px;">X</div>
         return (
             <div className="backofcard">
                 <div>
@@ -58,8 +59,9 @@ class cardComponentBack extends Component {
                             <AnyReactComponent
                                 lat={latNum}
                                 lng={lngNum}
-                                // text={`${kid.firstname}`+ ` lives here`}
-                                font-color="#ffff"
+                                
+                                // {`${kid.firstname}`+ ` lives here`}
+                                // font-color="#ffff"
                                 
                             />
                         </GoogleMapReact>

@@ -8,7 +8,7 @@ class cardComponentFront extends Component {
     this.state={
       showEdit: "show",
       showSave: "hide",
-      kids: this.props.kid
+      // kids: this.props.kid
     }
     // this.handleBKnow=this.handleBKnow.bind(this)
   }
@@ -21,25 +21,25 @@ class cardComponentFront extends Component {
 
   render() {
     
-    const {handleClick, bKnow}=this.props
+    const {handleClick, changebKnow, bknow, kid}=this.props
     // console.log("this is kid",this.state.kids)
     
     return (
           
-            <div className="kidbox" key={this.state.kids.id} >
+            <div className="kidbox"  >
               <div className="kidboxborder">
                 <div className="kidboxlefthalf">
                   <div className="kidboxpicture1">
-                    <img src={`${this.state.kids.kidpic}`} alt="" height="100%" width="75%" />
+                    <img src={`${kid.kidpic}`} alt="" height="100%" width="75%" />
                   </div>
                   <div className="kidboxlowerhalf">
                     <div>
                       <a className="kidname">
-                        {`${this.state.kids.firstname}`.toUpperCase()}
+                        {`${kid.firstname}`.toUpperCase()}
                         <br />
-                        {`${this.state.kids.lastname}`.toUpperCase()}
+                        {`${kid.lastname}`.toUpperCase()}
                       </a>
-                      <a>{`${this.state.kids.toy_name}`.toUpperCase()}</a>
+                      <a>{`${kid.toy_name}`.toUpperCase()}</a>
                     </div>
                   </div>
                   <div className="moreinfobutton">
@@ -49,13 +49,13 @@ class cardComponentFront extends Component {
 
                 <div className="kidboxrightinfo">
                   <div className="giftready">
-                    <img src={`${this.state.kids.toy_picture}`} alt="" height="100%" width="100%" />
+                    <img src={`${kid.toy_picture}`} alt="" height="100%" width="100%" />
                   </div>
                   <div className="check">
                     <h9>Does Bernard Know?</h9>
-                    {console.log(this.state.kids.doesbknow)}
-                    {this.state.kids.doesbknow === 'no' || this.state.kids.doesbknow === null ?
-                    <button className="redcheck" onClick={()=>bKnow(this.state.kids.id)}></button>:
+                    {console.log(this.props)}
+                    {bknow === 'no' ||bknow === null ?
+                    <button className="redcheck" onClick={()=>changebKnow(kid.id)}></button>:
                     <button  className="greencheck"></button>
                     }
                   </div>

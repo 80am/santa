@@ -28,8 +28,8 @@ class Flipper extends Component {
         return(
             <div className="cardflip" >
             <ReactCardFlip isFlipped={this.state.isFlipped}>
-            <CardComponentFront key="front" kid={this.props.kid} handleClick={this.handleClick} bKnow={this.props.bKnow} height="300px" width="300px"/>
-            <CardComponentBack key="back" kid={this.props.kid} handleClick={this.handleClick} bKnow={this.props.bKnow}/>
+            <CardComponentFront key="front" kid={this.props.kid} handleClick={this.handleClick} changebKnow={this.props.changebKnow} bknow={this.props.bknow} height="300px" width="300px"/>
+            <CardComponentBack key="back" kid={this.props.kid} handleClick={this.handleClick} changebKnow={this.props.changebKnow} bknow={this.props.bknow} />
             </ReactCardFlip>
             </div>
         )

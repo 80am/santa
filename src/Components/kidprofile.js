@@ -176,16 +176,6 @@ uploadFile1 = (file, signedRequest, toyurl) => {
 
 //--------------------------------------------------------------------------
 
-    // onDrop(picture) {
-    //     this.setState({
-    //         kidpictures: this.state.kidpictures.concat(picture),
-    //     });
-    // }
-    // onDrop1(picture) {
-    //     this.props.addtoyPic({
-    //         toypictures: this.state.toypictures.concat(picture),
-    //     });
-    // }
     onOpenModal = () => {
         this.setState({
             open: true
@@ -262,24 +252,18 @@ uploadFile1 = (file, signedRequest, toyurl) => {
     handleDeer(e) {
         this.props.adddeer(e.target.value)
     }
-    // handlekidPic(e) {
-    //     this.props.addkidPic(e.target.value)
-    // }
     handletoyPic(e) {
         this.props.addtoyPic(e.target.value)
     }
     sendToSanta(){
+        if(this.props.newkid.firstname =="" || this.props.newkid.lastname=="" || this.props.newkid.deeds=="" || this.props.newkid.wish==""){
+            alert('All Fields Must Be Filled. Please Try Again')
+        }
         console.log("made it into send to santa")
         axios.post(`/api/sendToSanta/`, this.props.newkid).then(()=>{
-            (this.onOpenModal())
-        })
-        // res.redirect('https://santatracker.google.com/village.html')
-        // .catch(()=> {
-        //     alert('Dont think so Tim. Try REGISTERING to access these goodies.')
-        // })
-        // .catch((err) => { 
-        //     // (this.onOpenModal()) 
-        // })
+            (this.onOpenModal())}
+            // .then(()=>{this.setState()})
+        )
     }
     logOut(){
         axios.get(`/auth/logout`)
@@ -406,11 +390,14 @@ uploadFile1 = (file, signedRequest, toyurl) => {
                     <div className="bodyright">
                     </div>
                     <Modal open={open} onClose={this.onCloseModal}>
-                        <h2>THANK YOU!!</h2> 
-                            You are on Santas list. He is curently checking it twice
-                        
-                        <button ></button>
-                        
+                        <div className="modalmodal">
+                        <h1>MERRY CHRISTMAS and THANK YOU!!</h1> 
+                            <h2>You are on SANTAS LIST. He is curently checking it twice</h2>
+                            <button className="modalbuttons"onClick={()=>this.logOut()}>Logout</button>
+                            <Link to='/kidpast'>
+                            <button className="modalbuttons">View Past Wishes</button>
+                            </Link>
+                        </div>
                         {/* <Link to="/"> */}
                         
                         {/* </Link> */}

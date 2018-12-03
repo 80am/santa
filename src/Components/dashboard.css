@@ -273,6 +273,7 @@ mainbody {
     font-size: 25px;
     display: flex;
     flex-direction: column;
+    text-align: left;
   }
   .rightlowerbox {
     /* border: 2px solid purple; */
@@ -347,14 +348,14 @@ mainbody {
   }
   .blankwhitebox {
     /* border: 1px solid black; */
-    height: 13%;
-    width: 19.7%;
+    height: 15%;
+    width: 20%;
     /* background: black; */
     /* background-color: #efe5d5; */
     background-color: white;
     /* position: relative; */
     z-index: 2;
-    margin: 0 -38px 0 0;
+    margin: 0 -50px 0 0;
     position: fixed;
   }
   .fontwhitebox {
@@ -419,6 +420,14 @@ mainbody {
     justify-content: flex-start;
     align-items: flex-end;
   }
+  .lowerlowerrightbox2 {
+    /* border: black 1px solid; */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
   .stripecircle1 {
     border: 2px solid black;
     /* border-right: none; */
@@ -428,19 +437,19 @@ mainbody {
     width: 13vw;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-image: linear-gradient(72deg, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A,#DDDCE2);
+    background-image: linear-gradient(75deg, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A, #DDDCE2, #DDDCE2, #C7342A,#DDDCE2);
     z-index: 9;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    margin: 0 0 0 -10.2%;
+    margin: 0 0 0 -11%;
   }
   .fontwhitebox1 {
     border: 2px black solid;
     border-top: none;
-    height: 26vh;
-    width: 75%;
+    height: 88%;
+    width: 72.5%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     background-color: white;
@@ -449,11 +458,22 @@ mainbody {
     /* border: 1px solid black; */
     height: 25%;
     width: 5%;
-    background: #EFE5D5;
+    /* background: #EFE5D5; */
+    background: white;
     /* background-color: gray; */
     position: fixed;
     z-index: 5;
-    margin: 0 0 0 -27px;
+    margin: 0 0 0 -40px;
+  }
+  .divdiv1{
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: -21%;
+
   }
   .mainbody {
     height: 100vh;

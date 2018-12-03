@@ -128,7 +128,6 @@ mainapp{
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    /* padding-bottom: 60px; */
 }
 .kidpic{
     border: 1px red solid;
@@ -267,11 +266,6 @@ mainapp{
 .bottomleft{
     border-right: 1px black solid;
     width: 10%;
-    /* background-image: url(../images/bluepaper.jpg); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-attachment: scroll; */
-    /* box-sizing: border-box; */
 
 }
 .bottommiddle{
@@ -365,8 +359,35 @@ mainapp{
     width: 150px;
     height: 50px;
 }
+.modalbuttons{
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 30px;
+    border-radius: 30px;
+    height: 75%;
+    background-image: url('../images/spiralwrap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 5px 5px 18px black;
+}
+.modalmodal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-
+}
+.santa1 button{
+    font-family: kaushan script, sans-serif, roboto;
+    font-size: 40px;
+    border-style: none;
+    background-color: transparent
+}
+.kidLogin{
+    padding-top: 400px;
+}
 
 
 

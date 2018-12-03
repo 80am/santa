@@ -33,7 +33,10 @@ class Dashboard extends Component {
         });
       }
   handleBKnow(id){
-    axios.put(`/api/changeBKnow/${id}`).then((res)=>this.setState({kids: res.data}).then(()=>{this.componentDidMount()}))
+    axios.put(`/api/changeBKnow/${id}`).then((res)=>{
+      this.setState({kids: res.data})
+        console.log(res.data)
+    })
     
   }
   filterSelect(e) {
@@ -50,17 +53,16 @@ class Dashboard extends Component {
 
   render() {
     if (this.state.kids !=[]) {
-      console.log(this.state.kids)
-    var alphakids = this.state.kids.sort((a,b) => (a.firstname.toLowerCase() > b.firstname.toLowerCase()) ? 1 : ((b.firstname.toLowerCase() > a.firstname.toLowerCase()) ? -1 : 0));
-    console.log("this is alphakids",alphakids)
-    var nicekids = alphakids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(kid => {
+    // var alphakids = this.state.kids.sort((a,b) => (a.firstname.toLowerCase() > b.firstname.toLowerCase()) ? 1 : ((b.firstname.toLowerCase() > a.firstname.toLowerCase()) ? -1 : 0));
+    // console.log("this is alphakids",alphakids)
+    var nicekids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'nice').map(kid => {
       return (
-        <Flipper kid={kid} bKnow={this.handleBKnow}/>
+        <Flipper key={kid.id} kid={kid} changebKnow={this.handleBKnow} bknow={kid.doesbknow}/>
       )
     });
-    var naughtykids = alphakids.filter(naughtyKid => naughtyKid.n_or_n == 'naughty').map(kid => {
+    var naughtykids = this.state.kids.filter(naughtyKid => naughtyKid.n_or_n == 'naughty').map(kid => {
       return (
-        <Flipper kid={kid} bKnow={this.handleBKnow}/>
+        <Flipper key={kid.id} kid={kid} changebKnow={this.handleBKnow}  bknow={kid.doesbknow}/>
       )
     });
   }
@@ -140,9 +142,12 @@ class Dashboard extends Component {
               </select>
             </div>
             <div className="push50" />
-            <div className="lowerlowerrightbox">
+
+            <div className="lowerlowerrightbox2">
+              <div className="divdiv1">
               <div className="stripecircle1">
                 <div className="fontwhitebox1" />
+              </div>
               </div>
               <div className="blankwhitebox1" />
             </div>
