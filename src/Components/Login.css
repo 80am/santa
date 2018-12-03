@@ -91,7 +91,7 @@ bigbox{
 
 }
 .santa1{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     display: flex;
     justify-content: center;
     color:green;
@@ -103,23 +103,15 @@ bigbox{
     /* flex-direction: row; */
 }
 .santa2{
+    /* border: 1px purple solid; */
     flex-direction: row;
-    border: 1px purple solid;
     display: flex;
     height: 20%;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
-.santa3{
-    border: 1px red solid;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center
-}
+
 h1{
     color:  #812122;
     cursor: none;
@@ -203,3 +195,37 @@ h1{
     width: 25%; */
 
 }
+.santa3{
+    /* border: 1px red solid; */
+    height: 100%;
+    width: 100%;
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.santa4{
+    /* border: 1px red solid; */
+    height: 100%;
+    width: 100%;
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: none
+}
+.santa3{display: flex}
+/* .santa4{display: none;} */
+@media(max-width: 414px){
+    .santa4{display: flex}
+    .santa3{display: none}
+    .kidLogin{padding: 400px}
+    .kidLogin input{
+        width: 1040%;
+        /* padding-right: 50px */
+    }
+}
+/* .santa3{
+    display: none;
+} */

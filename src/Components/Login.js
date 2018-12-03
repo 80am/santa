@@ -65,6 +65,12 @@ class Login extends Component {
                         </Link>
                         .wiftly <h1>A</h1>.llocating <h1>N</h1>.ew <h1>T</h1>.hings to <h1>A</h1>.ll
                             </div>
+                            <div className="santa4">
+                        <Link to="/dashboard">
+                            <button><h1>S</h1></button>
+                        </Link>
+                        .<h1>A</h1>. <h1>N</h1>.<h1>T</h1>.<h1>A</h1>.
+                            </div>
                         </div>
                     </div>
                     <div className="city">
